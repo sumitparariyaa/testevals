@@ -1,0 +1,363 @@
+{
+  "transcriptId": "case_032",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "moderate asthma exacerbation in 7-year-old",
+    "vitals": {
+      "bp": null,
+      "hr": 124,
+      "temp_f": 99,
+      "spo2": 92
+    },
+    "medications": [
+      {
+        "name": "albuterol nebulized",
+        "dose": "2.5 mg",
+        "frequency": "in clinic now",
+        "route": "inhaled"
+      },
+      {
+        "name": "ipratropium nebulized",
+        "dose": "0.5 mg",
+        "frequency": "in clinic now",
+        "route": "inhaled"
+      },
+      {
+        "name": "prednisolone",
+        "dose": "20 mg",
+        "frequency": "once daily",
+        "route": "PO"
+      },
+      {
+        "name": "albuterol HFA",
+        "dose": "2 puffs",
+        "frequency": "every 4 hours",
+        "route": "inhaled"
+      },
+      {
+        "name": "fluticasone",
+        "dose": "88 mcg two puffs",
+        "frequency": "twice daily",
+        "route": "inhaled"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "moderate asthma exacerbation",
+        "icd10": "J45.901"
+      }
+    ],
+    "plan": [
+      "nebulized albuterol 2.5 mg with ipratropium 0.5 mg in clinic now and reassess",
+      "prednisolone 20 mg by mouth once daily for 5 days",
+      "albuterol HFA 2 puffs every 4 hours through tomorrow then taper",
+      "continue fluticasone 88 mcg two puffs twice daily, set phone alarm",
+      "ER for worsening retractions, inability to speak full sentences, or SpO2 below 90"
+    ],
+    "follow_up": {
+      "interval_days": 3,
+      "reason": "asthma exacerbation recheck"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "moderate asthma exacerbation in 7-year-old",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "inhaled",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[1].route",
+        "value": "inhaled",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[3].route",
+        "value": "inhaled",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[4].route",
+        "value": "inhaled",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[4]",
+        "value": "ER for worsening retractions, inability to speak full sentences, or SpO2 below 90",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "albuterol nebulized",
+              "dose": "2.5 mg",
+              "frequency": "in clinic now",
+              "route": "inhaled"
+            },
+            "gold": {
+              "name": "albuterol nebulized",
+              "dose": "2.5 mg",
+              "frequency": "in clinic now",
+              "route": "inhaled"
+            }
+          },
+          {
+            "predicted": {
+              "name": "ipratropium nebulized",
+              "dose": "0.5 mg",
+              "frequency": "in clinic now",
+              "route": "inhaled"
+            },
+            "gold": {
+              "name": "ipratropium nebulized",
+              "dose": "0.5 mg",
+              "frequency": "in clinic now",
+              "route": "inhaled"
+            }
+          },
+          {
+            "predicted": {
+              "name": "prednisolone",
+              "dose": "20 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "prednisolone",
+              "dose": "20 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "albuterol HFA",
+              "dose": "2 puffs",
+              "frequency": "every 4 hours",
+              "route": "inhaled"
+            },
+            "gold": {
+              "name": "albuterol HFA",
+              "dose": "2 puffs",
+              "frequency": "every 4 hours",
+              "route": "inhaled"
+            }
+          },
+          {
+            "predicted": {
+              "name": "fluticasone",
+              "dose": "88 mcg two puffs",
+              "frequency": "twice daily",
+              "route": "inhaled"
+            },
+            "gold": {
+              "name": "fluticasone",
+              "dose": "88 mcg two puffs",
+              "frequency": "twice daily",
+              "route": "inhaled"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "nebulized albuterol 2.5 mg with ipratropium 0.5 mg in clinic now and reassess",
+            "gold": "nebulized albuterol 2.5 mg with ipratropium 0.5 mg in clinic now and reassess"
+          },
+          {
+            "predicted": "prednisolone 20 mg by mouth once daily for 5 days",
+            "gold": "prednisolone 20 mg by mouth once daily for 5 days"
+          },
+          {
+            "predicted": "albuterol HFA 2 puffs every 4 hours through tomorrow then taper",
+            "gold": "albuterol HFA 2 puffs every 4 hours through tomorrow then taper"
+          },
+          {
+            "predicted": "continue fluticasone 88 mcg two puffs twice daily, set phone alarm",
+            "gold": "continue fluticasone 88 mcg two puffs twice daily, set phone alarm"
+          },
+          {
+            "predicted": "ER for worsening retractions, inability to speak full sentences, or SpO2 below 90",
+            "gold": "ER for worsening retractions, inability to speak full sentences, or SpO2 below 90"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_032"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "moderate asthma exacerbation in 7-year-old",
+          "vitals": {
+            "bp": null,
+            "hr": 124,
+            "temp_f": 99,
+            "spo2": 92
+          },
+          "medications": [
+            {
+              "name": "albuterol nebulized",
+              "dose": "2.5 mg",
+              "frequency": "in clinic now",
+              "route": "inhaled"
+            },
+            {
+              "name": "ipratropium nebulized",
+              "dose": "0.5 mg",
+              "frequency": "in clinic now",
+              "route": "inhaled"
+            },
+            {
+              "name": "prednisolone",
+              "dose": "20 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            },
+            {
+              "name": "albuterol HFA",
+              "dose": "2 puffs",
+              "frequency": "every 4 hours",
+              "route": "inhaled"
+            },
+            {
+              "name": "fluticasone",
+              "dose": "88 mcg two puffs",
+              "frequency": "twice daily",
+              "route": "inhaled"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "moderate asthma exacerbation",
+              "icd10": "J45.901"
+            }
+          ],
+          "plan": [
+            "nebulized albuterol 2.5 mg with ipratropium 0.5 mg in clinic now and reassess",
+            "prednisolone 20 mg by mouth once daily for 5 days",
+            "albuterol HFA 2 puffs every 4 hours through tomorrow then taper",
+            "continue fluticasone 88 mcg two puffs twice daily, set phone alarm",
+            "ER for worsening retractions, inability to speak full sentences, or SpO2 below 90"
+          ],
+          "follow_up": {
+            "interval_days": 3,
+            "reason": "asthma exacerbation recheck"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: pediatric urgent]\r\n[Vitals: HR 124, Temp 99.0, SpO2 92%]\r\n\r\nDoctor: Hi, how is Sofia breathing today?\r\nParent: She's 7. Started wheezing last night and her cough is awful. We've used her albuterol but it's only helping a little.\r\nDoctor: SpO2 is 92, mild retractions, audible wheeze on auscultation, prolonged expiration. This is a moderate asthma exacerbation.\r\nParent: What now?\r\nDoctor: Let's give her a nebulized albuterol 2.5 mg with ipratropium 0.5 mg in clinic now, then reassess. Also start prednisolone 20 mg by mouth once daily for 5 days.\r\nParent: Okay.\r\nDoctor: At home, albuterol HFA 2 puffs every 4 hours through tomorrow, then taper as she improves. Continue her fluticasone 88 mcg two puffs twice daily — looks like she may have been missing doses.\r\nParent: Yes, we got out of routine.\r\nDoctor: Set a phone alarm. If she gets retractions worse, can't speak in full sentences, or SpO2 drops below 90 at home, ER. Otherwise come back in 2 to 3 days for a recheck.\r\n",
+  "gold": {
+    "chief_complaint": "moderate asthma exacerbation in 7-year-old",
+    "vitals": {
+      "bp": null,
+      "hr": 124,
+      "temp_f": 99,
+      "spo2": 92
+    },
+    "medications": [
+      {
+        "name": "albuterol nebulized",
+        "dose": "2.5 mg",
+        "frequency": "in clinic now",
+        "route": "inhaled"
+      },
+      {
+        "name": "ipratropium nebulized",
+        "dose": "0.5 mg",
+        "frequency": "in clinic now",
+        "route": "inhaled"
+      },
+      {
+        "name": "prednisolone",
+        "dose": "20 mg",
+        "frequency": "once daily",
+        "route": "PO"
+      },
+      {
+        "name": "albuterol HFA",
+        "dose": "2 puffs",
+        "frequency": "every 4 hours",
+        "route": "inhaled"
+      },
+      {
+        "name": "fluticasone",
+        "dose": "88 mcg two puffs",
+        "frequency": "twice daily",
+        "route": "inhaled"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "moderate asthma exacerbation",
+        "icd10": "J45.901"
+      }
+    ],
+    "plan": [
+      "nebulized albuterol 2.5 mg with ipratropium 0.5 mg in clinic now and reassess",
+      "prednisolone 20 mg by mouth once daily for 5 days",
+      "albuterol HFA 2 puffs every 4 hours through tomorrow then taper",
+      "continue fluticasone 88 mcg two puffs twice daily, set phone alarm",
+      "ER for worsening retractions, inability to speak full sentences, or SpO2 below 90"
+    ],
+    "follow_up": {
+      "interval_days": 3,
+      "reason": "asthma exacerbation recheck"
+    }
+  },
+  "completedAt": "2026-05-01T10:06:45.977Z"
+}

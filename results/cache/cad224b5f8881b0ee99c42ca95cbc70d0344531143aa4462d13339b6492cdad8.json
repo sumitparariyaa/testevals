@@ -1,0 +1,219 @@
+{
+  "transcriptId": "case_013",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "right upper quadrant abdominal pain after fatty meal",
+    "vitals": {
+      "bp": "138/88",
+      "hr": 102,
+      "temp_f": 100.6,
+      "spo2": 98
+    },
+    "medications": [
+      {
+        "name": "ibuprofen",
+        "dose": "600 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "suspected biliary colic versus early cholecystitis"
+      }
+    ],
+    "plan": [
+      "abdominal ultrasound today",
+      "CBC, comprehensive metabolic panel, and lipase",
+      "low-fat diet",
+      "ibuprofen 600 mg every 6 hours as needed for pain",
+      "ER if pain becomes constant, fevers, or jaundice",
+      "likely surgery referral if stones confirmed"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "call with results, plan from there"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "right upper quadrant abdominal pain after fatty meal",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "suspected biliary colic versus early cholecystitis",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "abdominal ultrasound today",
+            "gold": "abdominal ultrasound today"
+          },
+          {
+            "predicted": "CBC, comprehensive metabolic panel, and lipase",
+            "gold": "CBC, comprehensive metabolic panel, and lipase"
+          },
+          {
+            "predicted": "low-fat diet",
+            "gold": "low-fat diet"
+          },
+          {
+            "predicted": "ibuprofen 600 mg every 6 hours as needed for pain",
+            "gold": "ibuprofen 600 mg every 6 hours as needed for pain"
+          },
+          {
+            "predicted": "ER if pain becomes constant, fevers, or jaundice",
+            "gold": "ER if pain becomes constant, fevers, or jaundice"
+          },
+          {
+            "predicted": "likely surgery referral if stones confirmed",
+            "gold": "likely surgery referral if stones confirmed"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "few_shot",
+        "transcriptId": "case_013"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "right upper quadrant abdominal pain after fatty meal",
+          "vitals": {
+            "bp": "138/88",
+            "hr": 102,
+            "temp_f": 100.6,
+            "spo2": 98
+          },
+          "medications": [
+            {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "suspected biliary colic versus early cholecystitis"
+            }
+          ],
+          "plan": [
+            "abdominal ultrasound today",
+            "CBC, comprehensive metabolic panel, and lipase",
+            "low-fat diet",
+            "ibuprofen 600 mg every 6 hours as needed for pain",
+            "ER if pain becomes constant, fevers, or jaundice",
+            "likely surgery referral if stones confirmed"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": "call with results, plan from there"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "0104e919dec297ce",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: in-person urgent]\r\n[Vitals: BP 138/88, HR 102, Temp 100.6, SpO2 98%]\r\n\r\nDoctor: Hi Greg, you came in for upper right belly pain?\r\nPatient: Yes, started after dinner last night. Greasy meal. Pain was intense for about three hours, kind of radiates to my right shoulder blade. Some nausea, no vomiting today. It's calmed down but still tender.\r\nDoctor: Has this happened before?\r\nPatient: Twice in the last few months, but never this bad.\r\nDoctor: Murphy's sign — does it hurt when I press here as you breathe in? Yes. Tender right upper quadrant. With those features, biliary colic versus early cholecystitis is the concern. Let's get an abdominal ultrasound today, CBC, comprehensive metabolic panel, and lipase to rule out pancreatitis.\r\nPatient: Okay.\r\nDoctor: For now, low-fat diet, and ibuprofen 600 mg every 6 hours as needed for pain. If the pain becomes constant, you have fevers, or jaundice, go to the ER.\r\nPatient: Got it.\r\nDoctor: I'll call you with results, and we'll plan from there — likely a surgery referral if stones are confirmed.\r\n",
+  "gold": {
+    "chief_complaint": "right upper quadrant abdominal pain after fatty meal",
+    "vitals": {
+      "bp": "138/88",
+      "hr": 102,
+      "temp_f": 100.6,
+      "spo2": 98
+    },
+    "medications": [
+      {
+        "name": "ibuprofen",
+        "dose": "600 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "suspected biliary colic versus early cholecystitis"
+      }
+    ],
+    "plan": [
+      "abdominal ultrasound today",
+      "CBC, comprehensive metabolic panel, and lipase",
+      "low-fat diet",
+      "ibuprofen 600 mg every 6 hours as needed for pain",
+      "ER if pain becomes constant, fevers, or jaundice",
+      "likely surgery referral if stones confirmed"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "call with results, plan from there"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:10.471Z"
+}

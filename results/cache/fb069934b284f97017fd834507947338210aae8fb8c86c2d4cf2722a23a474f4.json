@@ -1,0 +1,267 @@
+{
+  "transcriptId": "case_047",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "left big toe joint pain, swelling, redness — gout flare",
+    "vitals": {
+      "bp": "142/88",
+      "hr": 92,
+      "temp_f": 99.6,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "indomethacin",
+        "dose": "50 mg",
+        "frequency": "three times a day with food",
+        "route": "PO"
+      },
+      {
+        "name": "allopurinol",
+        "dose": "100 mg",
+        "frequency": "once a day",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "acute gout flare, left first MTP joint",
+        "icd10": "M10.072"
+      }
+    ],
+    "plan": [
+      "indomethacin 50 mg three times a day with food until flare resolves, usually 5 to 7 days",
+      "avoid aspirin",
+      "ice, elevate, and rest the joint",
+      "start allopurinol 100 mg once a day after flare settles, titrate to uric acid under 6",
+      "limit red meat, shellfish, beer; hydrate"
+    ],
+    "follow_up": {
+      "interval_days": 28,
+      "reason": "gout management follow-up"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "left big toe joint pain, swelling, redness — gout flare",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[1].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "acute gout flare, left first MTP joint",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "28",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "gout management follow-up",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "indomethacin",
+              "dose": "50 mg",
+              "frequency": "three times a day with food",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "indomethacin",
+              "dose": "50 mg",
+              "frequency": "three times a day with food",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "allopurinol",
+              "dose": "100 mg",
+              "frequency": "once a day",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "allopurinol",
+              "dose": "100 mg",
+              "frequency": "once a day",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "indomethacin 50 mg three times a day with food until flare resolves, usually 5 to 7 days",
+            "gold": "indomethacin 50 mg three times a day with food until flare resolves, usually 5 to 7 days"
+          },
+          {
+            "predicted": "avoid aspirin",
+            "gold": "avoid aspirin"
+          },
+          {
+            "predicted": "ice, elevate, and rest the joint",
+            "gold": "ice, elevate, and rest the joint"
+          },
+          {
+            "predicted": "start allopurinol 100 mg once a day after flare settles, titrate to uric acid under 6",
+            "gold": "start allopurinol 100 mg once a day after flare settles, titrate to uric acid under 6"
+          },
+          {
+            "predicted": "limit red meat, shellfish, beer; hydrate",
+            "gold": "limit red meat, shellfish, beer; hydrate"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_047"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "left big toe joint pain, swelling, redness — gout flare",
+          "vitals": {
+            "bp": "142/88",
+            "hr": 92,
+            "temp_f": 99.6,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "indomethacin",
+              "dose": "50 mg",
+              "frequency": "three times a day with food",
+              "route": "PO"
+            },
+            {
+              "name": "allopurinol",
+              "dose": "100 mg",
+              "frequency": "once a day",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "acute gout flare, left first MTP joint",
+              "icd10": "M10.072"
+            }
+          ],
+          "plan": [
+            "indomethacin 50 mg three times a day with food until flare resolves, usually 5 to 7 days",
+            "avoid aspirin",
+            "ice, elevate, and rest the joint",
+            "start allopurinol 100 mg once a day after flare settles, titrate to uric acid under 6",
+            "limit red meat, shellfish, beer; hydrate"
+          ],
+          "follow_up": {
+            "interval_days": 28,
+            "reason": "gout management follow-up"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person urgent]\r\n[Vitals: BP 142/88, HR 92, Temp 99.6]\r\n\r\nDoctor: Hi Vincent, foot pain?\r\nPatient: Woke up at 3 am with my left big toe joint on fire. Red, swollen, can't bear weight on it. I've had this once before, two years ago.\r\nDoctor: Any recent dietary triggers — alcohol, red meat, shellfish?\r\nPatient: Steak dinner and a few beers two nights ago.\r\nDoctor: Exam: first MTP joint of the left foot — exquisitely tender, erythematous, warm, swollen. Classic gout flare.\r\nPatient: Confirmed?\r\nDoctor: Clinically, yes. Last labs showed uric acid 8.4. We could tap the joint to confirm crystals but the picture is classic.\r\nPatient: Treatment?\r\nDoctor: Indomethacin 50 mg three times a day with food until the flare resolves, usually 5 to 7 days. Avoid aspirin. Ice the joint, elevate, rest.\r\nPatient: Long-term?\r\nDoctor: With two flares now, let's start daily allopurinol 100 mg once a day after the flare settles, and titrate up. Goal uric acid under 6.\r\nPatient: Diet too?\r\nDoctor: Limit red meat, shellfish, beer. Hydrate. Follow up in 4 weeks.\r\n",
+  "gold": {
+    "chief_complaint": "left big toe joint pain, swelling, redness — gout flare",
+    "vitals": {
+      "bp": "142/88",
+      "hr": 92,
+      "temp_f": 99.6,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "indomethacin",
+        "dose": "50 mg",
+        "frequency": "three times a day with food",
+        "route": "PO"
+      },
+      {
+        "name": "allopurinol",
+        "dose": "100 mg",
+        "frequency": "once a day",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "acute gout flare, left first MTP joint",
+        "icd10": "M10.072"
+      }
+    ],
+    "plan": [
+      "indomethacin 50 mg three times a day with food until flare resolves, usually 5 to 7 days",
+      "avoid aspirin",
+      "ice, elevate, and rest the joint",
+      "start allopurinol 100 mg once a day after flare settles, titrate to uric acid under 6",
+      "limit red meat, shellfish, beer; hydrate"
+    ],
+    "follow_up": {
+      "interval_days": 28,
+      "reason": "gout management follow-up"
+    }
+  },
+  "completedAt": "2026-05-01T10:06:48.030Z"
+}

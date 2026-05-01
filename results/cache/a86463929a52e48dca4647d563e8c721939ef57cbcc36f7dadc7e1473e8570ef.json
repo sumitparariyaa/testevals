@@ -1,0 +1,208 @@
+{
+  "transcriptId": "case_045",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "hypothyroid follow-up with elevated TSH",
+    "vitals": {
+      "bp": "118/74",
+      "hr": 64,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "levothyroxine",
+        "dose": "88 mcg",
+        "frequency": "once daily on an empty stomach",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "hypothyroidism",
+        "icd10": "E03.9"
+      }
+    ],
+    "plan": [
+      "take levothyroxine on empty stomach with water only, 30 to 60 minutes before food, coffee, or meds",
+      "increase levothyroxine to 88 mcg once daily",
+      "recheck TSH in 6 to 8 weeks",
+      "call for palpitations, jitteriness, or sleep trouble"
+    ],
+    "follow_up": {
+      "interval_days": 56,
+      "reason": "TSH recheck"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "diagnoses[0].description",
+        "value": "hypothyroidism",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "56",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "levothyroxine",
+              "dose": "88 mcg",
+              "frequency": "once daily on an empty stomach",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "levothyroxine",
+              "dose": "88 mcg",
+              "frequency": "once daily on an empty stomach",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "take levothyroxine on empty stomach with water only, 30 to 60 minutes before food, coffee, or meds",
+            "gold": "take levothyroxine on empty stomach with water only, 30 to 60 minutes before food, coffee, or meds"
+          },
+          {
+            "predicted": "increase levothyroxine to 88 mcg once daily",
+            "gold": "increase levothyroxine to 88 mcg once daily"
+          },
+          {
+            "predicted": "recheck TSH in 6 to 8 weeks",
+            "gold": "recheck TSH in 6 to 8 weeks"
+          },
+          {
+            "predicted": "call for palpitations, jitteriness, or sleep trouble",
+            "gold": "call for palpitations, jitteriness, or sleep trouble"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "few_shot",
+        "transcriptId": "case_045"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "hypothyroid follow-up with elevated TSH",
+          "vitals": {
+            "bp": "118/74",
+            "hr": 64,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "levothyroxine",
+              "dose": "88 mcg",
+              "frequency": "once daily on an empty stomach",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "hypothyroidism",
+              "icd10": "E03.9"
+            }
+          ],
+          "plan": [
+            "take levothyroxine on empty stomach with water only, 30 to 60 minutes before food, coffee, or meds",
+            "increase levothyroxine to 88 mcg once daily",
+            "recheck TSH in 6 to 8 weeks",
+            "call for palpitations, jitteriness, or sleep trouble"
+          ],
+          "follow_up": {
+            "interval_days": 56,
+            "reason": "TSH recheck"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "0104e919dec297ce",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: in-person, hypothyroid follow-up]\r\n[Vitals: BP 118/74, HR 64]\r\n\r\nDoctor: Hi Sara. Your TSH today came back at 6.8. It's still slightly elevated despite levothyroxine 75 mcg.\r\nPatient: I've been a little tired and a bit cold. I take it every morning.\r\nDoctor: With food or coffee?\r\nPatient: I take it with my coffee, yeah.\r\nDoctor: That's likely reducing absorption. Take it on an empty stomach, with water only, at least 30 to 60 minutes before food, coffee, or other meds.\r\nPatient: Got it.\r\nDoctor: Let's also bump the dose. Increase levothyroxine to 88 mcg once daily on an empty stomach. Recheck TSH in 6 to 8 weeks.\r\nPatient: Okay.\r\nDoctor: Continue your other meds as before. If you develop palpitations, jitteriness, or trouble sleeping, call us — could mean the dose is too high.\r\nPatient: Will do.\r\nDoctor: Follow up in 8 weeks with the lab.\r\n",
+  "gold": {
+    "chief_complaint": "hypothyroid follow-up with elevated TSH",
+    "vitals": {
+      "bp": "118/74",
+      "hr": 64,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "levothyroxine",
+        "dose": "88 mcg",
+        "frequency": "once daily on an empty stomach",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "hypothyroidism",
+        "icd10": "E03.9"
+      }
+    ],
+    "plan": [
+      "take levothyroxine on empty stomach with water only, 30 to 60 minutes before food, coffee, or meds",
+      "increase levothyroxine to 88 mcg once daily",
+      "recheck TSH in 6 to 8 weeks",
+      "call for palpitations, jitteriness, or sleep trouble"
+    ],
+    "follow_up": {
+      "interval_days": 56,
+      "reason": "TSH recheck"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:15.256Z"
+}

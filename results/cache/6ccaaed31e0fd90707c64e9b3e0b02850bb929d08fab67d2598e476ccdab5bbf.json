@@ -1,0 +1,230 @@
+{
+  "transcriptId": "case_037",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "severe menstrual cramps causing missed work",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "ibuprofen",
+        "dose": "600 mg",
+        "frequency": "every 6 hours with food",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "primary dysmenorrhea",
+        "icd10": "N94.4"
+      }
+    ],
+    "plan": [
+      "ibuprofen 600 mg every 6 hours with food, starting a day before period and continuing first 2 to 3 days",
+      "consider combined oral contraceptives if NSAIDs insufficient",
+      "use heat pad",
+      "regular exercise",
+      "message after two cycles to update"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "message after two cycles"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "severe menstrual cramps causing missed work",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[0]",
+        "value": "ibuprofen 600 mg every 6 hours with food, starting a day before period and continuing first 2 to 3 days",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[1]",
+        "value": "consider combined oral contraceptives if NSAIDs insufficient",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[2]",
+        "value": "use heat pad",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[4]",
+        "value": "message after two cycles to update",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "every 6 hours with food",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "every 6 hours with food",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "ibuprofen 600 mg every 6 hours with food, starting a day before period and continuing first 2 to 3 days",
+            "gold": "ibuprofen 600 mg every 6 hours with food, starting a day before period and continuing first 2 to 3 days"
+          },
+          {
+            "predicted": "consider combined oral contraceptives if NSAIDs insufficient",
+            "gold": "consider combined oral contraceptives if NSAIDs insufficient"
+          },
+          {
+            "predicted": "use heat pad",
+            "gold": "use heat pad"
+          },
+          {
+            "predicted": "regular exercise",
+            "gold": "regular exercise"
+          },
+          {
+            "predicted": "message after two cycles to update",
+            "gold": "message after two cycles to update"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_037"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "severe menstrual cramps causing missed work",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "every 6 hours with food",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "primary dysmenorrhea",
+              "icd10": "N94.4"
+            }
+          ],
+          "plan": [
+            "ibuprofen 600 mg every 6 hours with food, starting a day before period and continuing first 2 to 3 days",
+            "consider combined oral contraceptives if NSAIDs insufficient",
+            "use heat pad",
+            "regular exercise",
+            "message after two cycles to update"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": "message after two cycles"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: telehealth]\r\n\r\nDoctor: Hi Lina, you're calling about painful periods?\r\nPatient: Yes. Severe cramps the first two days every cycle. I miss work sometimes. It's been like this since high school.\r\nDoctor: Any heavy bleeding, bleeding between periods, pain with intercourse?\r\nPatient: Heavy first day but not crazy. No bleeding between periods. No pain with intercourse.\r\nDoctor: With no concerning features, this fits primary dysmenorrhea. Have you tried NSAIDs?\r\nPatient: Just regular Tylenol.\r\nDoctor: NSAIDs are more effective. Start ibuprofen 600 mg every 6 hours with food, beginning a day before your period starts and continuing for the first 2 to 3 days. If that's not enough, we can talk about combined oral contraceptives.\r\nPatient: Okay, let me try the ibuprofen first.\r\nDoctor: Heat pad helps. Regular exercise can help too. Message me after two cycles to let me know how it's going.\r\n",
+  "gold": {
+    "chief_complaint": "severe menstrual cramps causing missed work",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "ibuprofen",
+        "dose": "600 mg",
+        "frequency": "every 6 hours with food",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "primary dysmenorrhea",
+        "icd10": "N94.4"
+      }
+    ],
+    "plan": [
+      "ibuprofen 600 mg every 6 hours with food, starting a day before period and continuing first 2 to 3 days",
+      "consider combined oral contraceptives if NSAIDs insufficient",
+      "use heat pad",
+      "regular exercise",
+      "message after two cycles to update"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "message after two cycles"
+    }
+  },
+  "completedAt": "2026-05-01T10:06:46.772Z"
+}

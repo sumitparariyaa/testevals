@@ -1,0 +1,22 @@
+{
+  "name": "@test-evals/llm",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "catalog:",
+    "@test-evals/shared": "workspace:*",
+    "ajv": "catalog:"
+  },
+  "devDependencies": {
+    "@test-evals/config": "workspace:*",
+    "@types/bun": "catalog:",
+    "typescript": "catalog:"
+  }
+}

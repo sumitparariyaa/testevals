@@ -1,0 +1,264 @@
+{
+  "transcriptId": "case_050",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "left knee abrasion from bike fall",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "petrolatum ointment",
+        "dose": null,
+        "frequency": "with each dressing change",
+        "route": "topical"
+      },
+      {
+        "name": "acetaminophen",
+        "dose": "500 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "abrasion of left knee",
+        "icd10": "S80.212A"
+      }
+    ],
+    "plan": [
+      "irrigate wound with saline and scrub to remove debris",
+      "apply petrolatum ointment and non-stick dressing",
+      "wash gently with soap and water once a day, reapply ointment and fresh dressing",
+      "keep covered for first week",
+      "acetaminophen 500 mg every 6 hours as needed",
+      "call for increasing redness, warmth, pus, or fever"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": null
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "left knee abrasion from bike fall",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].frequency",
+        "value": "with each dressing change",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "topical",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[0]",
+        "value": "irrigate wound with saline and scrub to remove debris",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "petrolatum ointment",
+              "dose": null,
+              "frequency": "with each dressing change",
+              "route": "topical"
+            },
+            "gold": {
+              "name": "petrolatum ointment",
+              "dose": null,
+              "frequency": "with each dressing change",
+              "route": "topical"
+            }
+          },
+          {
+            "predicted": {
+              "name": "acetaminophen",
+              "dose": "500 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "acetaminophen",
+              "dose": "500 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "irrigate wound with saline and scrub to remove debris",
+            "gold": "irrigate wound with saline and scrub to remove debris"
+          },
+          {
+            "predicted": "apply petrolatum ointment and non-stick dressing",
+            "gold": "apply petrolatum ointment and non-stick dressing"
+          },
+          {
+            "predicted": "wash gently with soap and water once a day, reapply ointment and fresh dressing",
+            "gold": "wash gently with soap and water once a day, reapply ointment and fresh dressing"
+          },
+          {
+            "predicted": "keep covered for first week",
+            "gold": "keep covered for first week"
+          },
+          {
+            "predicted": "acetaminophen 500 mg every 6 hours as needed",
+            "gold": "acetaminophen 500 mg every 6 hours as needed"
+          },
+          {
+            "predicted": "call for increasing redness, warmth, pus, or fever",
+            "gold": "call for increasing redness, warmth, pus, or fever"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_050"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "left knee abrasion from bike fall",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "petrolatum ointment",
+              "dose": null,
+              "frequency": "with each dressing change",
+              "route": "topical"
+            },
+            {
+              "name": "acetaminophen",
+              "dose": "500 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "abrasion of left knee",
+              "icd10": "S80.212A"
+            }
+          ],
+          "plan": [
+            "irrigate wound with saline and scrub to remove debris",
+            "apply petrolatum ointment and non-stick dressing",
+            "wash gently with soap and water once a day, reapply ointment and fresh dressing",
+            "keep covered for first week",
+            "acetaminophen 500 mg every 6 hours as needed",
+            "call for increasing redness, warmth, pus, or fever"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": null
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person]\r\n\r\nDoctor: Hi Naomi. Bike scrape?\r\nPatient: Yeah. Fell off my bike this morning, slid on my left knee. Big road rash.\r\nDoctor: Let me see. About 5 by 6 cm abrasion over the left knee with embedded grit, no bleeding now, no laceration deep enough to need stitches, full range of motion, no joint instability.\r\nPatient: Hurts.\r\nDoctor: Let's clean it thoroughly. I'm going to irrigate with saline, scrub gently to get the debris out, that's the most important part. Apply petrolatum ointment and a non-stick dressing.\r\nPatient: Antibiotics?\r\nDoctor: Not needed for clean abrasions. Tetanus is current per chart from 4 years ago.\r\nPatient: Care at home?\r\nDoctor: Wash gently with soap and water once a day, reapply petrolatum ointment and a fresh non-stick dressing. Keep it covered for the first week. Acetaminophen 500 mg every 6 hours as needed.\r\nPatient: When should I worry?\r\nDoctor: Increasing redness, warmth, pus, fever — call us. Otherwise no follow-up needed; should heal in 1 to 2 weeks.\r\n",
+  "gold": {
+    "chief_complaint": "left knee abrasion from bike fall",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "petrolatum ointment",
+        "dose": null,
+        "frequency": "with each dressing change",
+        "route": "topical"
+      },
+      {
+        "name": "acetaminophen",
+        "dose": "500 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "abrasion of left knee",
+        "icd10": "S80.212A"
+      }
+    ],
+    "plan": [
+      "irrigate wound with saline and scrub to remove debris",
+      "apply petrolatum ointment and non-stick dressing",
+      "wash gently with soap and water once a day, reapply ointment and fresh dressing",
+      "keep covered for first week",
+      "acetaminophen 500 mg every 6 hours as needed",
+      "call for increasing redness, warmth, pus, or fever"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": null
+    }
+  },
+  "completedAt": "2026-05-01T10:06:48.271Z"
+}

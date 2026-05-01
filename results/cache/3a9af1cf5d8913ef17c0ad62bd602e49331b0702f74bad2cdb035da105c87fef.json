@@ -1,0 +1,240 @@
+{
+  "transcriptId": "case_043",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "smoking cessation counseling",
+    "vitals": {
+      "bp": "130/82",
+      "hr": 80,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "varenicline",
+        "dose": "0.5 mg",
+        "frequency": "once daily days 1-3, twice daily days 4-7, then 1 mg twice daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "tobacco use disorder",
+        "icd10": "F17.210"
+      }
+    ],
+    "plan": [
+      "set quit date in next 2 weeks",
+      "start varenicline 1 week before quit date with the titration schedule for 12 weeks total",
+      "take varenicline with food and full glass of water",
+      "enroll in quit-line counseling",
+      "plan substitutes for smoking triggers: gum, walking, deep breaths"
+    ],
+    "follow_up": {
+      "interval_days": 28,
+      "reason": "smoking cessation follow-up"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "smoking cessation counseling",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].frequency",
+        "value": "once daily days 1-3, twice daily days 4-7, then 1 mg twice daily",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "tobacco use disorder",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[1]",
+        "value": "start varenicline 1 week before quit date with the titration schedule for 12 weeks total",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "28",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "smoking cessation follow-up",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "varenicline",
+              "dose": "0.5 mg",
+              "frequency": "once daily days 1-3, twice daily days 4-7, then 1 mg twice daily",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "varenicline",
+              "dose": "0.5 mg",
+              "frequency": "once daily days 1-3, twice daily days 4-7, then 1 mg twice daily",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "set quit date in next 2 weeks",
+            "gold": "set quit date in next 2 weeks"
+          },
+          {
+            "predicted": "start varenicline 1 week before quit date with the titration schedule for 12 weeks total",
+            "gold": "start varenicline 1 week before quit date with the titration schedule for 12 weeks total"
+          },
+          {
+            "predicted": "take varenicline with food and full glass of water",
+            "gold": "take varenicline with food and full glass of water"
+          },
+          {
+            "predicted": "enroll in quit-line counseling",
+            "gold": "enroll in quit-line counseling"
+          },
+          {
+            "predicted": "plan substitutes for smoking triggers: gum, walking, deep breaths",
+            "gold": "plan substitutes for smoking triggers: gum, walking, deep breaths"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "cot",
+        "transcriptId": "case_043"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "smoking cessation counseling",
+          "vitals": {
+            "bp": "130/82",
+            "hr": 80,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "varenicline",
+              "dose": "0.5 mg",
+              "frequency": "once daily days 1-3, twice daily days 4-7, then 1 mg twice daily",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "tobacco use disorder",
+              "icd10": "F17.210"
+            }
+          ],
+          "plan": [
+            "set quit date in next 2 weeks",
+            "start varenicline 1 week before quit date with the titration schedule for 12 weeks total",
+            "take varenicline with food and full glass of water",
+            "enroll in quit-line counseling",
+            "plan substitutes for smoking triggers: gum, walking, deep breaths"
+          ],
+          "follow_up": {
+            "interval_days": 28,
+            "reason": "smoking cessation follow-up"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "dd25af3e1241b9e2",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 3,
+  "transcript": "[Visit type: in-person counseling]\r\n[Vitals: BP 130/82, HR 80]\r\n\r\nDoctor: Hi Frank, you said you want to quit smoking?\r\nPatient: Yeah. Pack a day for 25 years. I tried cold turkey twice and didn't last more than a few days.\r\nDoctor: That's hard. We have better tools now. Are you motivated to set a quit date in the next 2 weeks?\r\nPatient: Yes.\r\nDoctor: I'd recommend varenicline. Start it 1 week before your quit date. Day 1 to 3, varenicline 0.5 mg once daily. Day 4 to 7, 0.5 mg twice daily. Day 8 onward, 1 mg twice daily. Total course is 12 weeks.\r\nPatient: Side effects?\r\nDoctor: Nausea is the main one — take with food and a full glass of water. Watch for unusual mood changes.\r\nPatient: Okay.\r\nDoctor: I'll also enroll you in our quit-line counseling — it doubles success rates. Pick your quit date. Avoid your usual smoking triggers, plan substitutes — gum, walking, deep breaths.\r\nPatient: Got it.\r\nDoctor: Follow up in 4 weeks, sooner if you have side effects.\r\n",
+  "gold": {
+    "chief_complaint": "smoking cessation counseling",
+    "vitals": {
+      "bp": "130/82",
+      "hr": 80,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "varenicline",
+        "dose": "0.5 mg",
+        "frequency": "once daily days 1-3, twice daily days 4-7, then 1 mg twice daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "tobacco use disorder",
+        "icd10": "F17.210"
+      }
+    ],
+    "plan": [
+      "set quit date in next 2 weeks",
+      "start varenicline 1 week before quit date with the titration schedule for 12 weeks total",
+      "take varenicline with food and full glass of water",
+      "enroll in quit-line counseling",
+      "plan substitutes for smoking triggers: gum, walking, deep breaths"
+    ],
+    "follow_up": {
+      "interval_days": 28,
+      "reason": "smoking cessation follow-up"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:26.666Z"
+}

@@ -1,0 +1,262 @@
+{
+  "transcriptId": "case_003",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "severe sore throat with difficulty swallowing",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "penicillin V",
+        "dose": "500 mg",
+        "frequency": "four times a day",
+        "route": "PO"
+      },
+      {
+        "name": "acetaminophen",
+        "dose": "500 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "suspected streptococcal pharyngitis",
+        "icd10": "J02.0"
+      }
+    ],
+    "plan": [
+      "rapid strep test at the lab today",
+      "start penicillin V 500 mg four times a day for 10 days if positive",
+      "acetaminophen 500 mg every 6 hours as needed for pain",
+      "warm salt water gargles and rest",
+      "message if not improving in 3 days on antibiotics"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": null
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "severe sore throat with difficulty swallowing",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "suspected streptococcal pharyngitis",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[0]",
+        "value": "rapid strep test at the lab today",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[3]",
+        "value": "warm salt water gargles and rest",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[4]",
+        "value": "message if not improving in 3 days on antibiotics",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "penicillin V",
+              "dose": "500 mg",
+              "frequency": "four times a day",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "penicillin V",
+              "dose": "500 mg",
+              "frequency": "four times a day",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "acetaminophen",
+              "dose": "500 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "acetaminophen",
+              "dose": "500 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "rapid strep test at the lab today",
+            "gold": "rapid strep test at the lab today"
+          },
+          {
+            "predicted": "start penicillin V 500 mg four times a day for 10 days if positive",
+            "gold": "start penicillin V 500 mg four times a day for 10 days if positive"
+          },
+          {
+            "predicted": "acetaminophen 500 mg every 6 hours as needed for pain",
+            "gold": "acetaminophen 500 mg every 6 hours as needed for pain"
+          },
+          {
+            "predicted": "warm salt water gargles and rest",
+            "gold": "warm salt water gargles and rest"
+          },
+          {
+            "predicted": "message if not improving in 3 days on antibiotics",
+            "gold": "message if not improving in 3 days on antibiotics"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "few_shot",
+        "transcriptId": "case_003"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "severe sore throat with difficulty swallowing",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "penicillin V",
+              "dose": "500 mg",
+              "frequency": "four times a day",
+              "route": "PO"
+            },
+            {
+              "name": "acetaminophen",
+              "dose": "500 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "suspected streptococcal pharyngitis",
+              "icd10": "J02.0"
+            }
+          ],
+          "plan": [
+            "rapid strep test at the lab today",
+            "start penicillin V 500 mg four times a day for 10 days if positive",
+            "acetaminophen 500 mg every 6 hours as needed for pain",
+            "warm salt water gargles and rest",
+            "message if not improving in 3 days on antibiotics"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": null
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "0104e919dec297ce",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: telehealth]\r\n\r\nDoctor: Hi Priya, how are you feeling?\r\nPatient: My throat is killing me. Started yesterday afternoon. I can barely swallow.\r\nDoctor: Any cough or runny nose?\r\nPatient: No, none. Just throat. And I think I have a fever, I felt really hot last night.\r\nDoctor: Any white spots when you look in the mirror?\r\nPatient: Yeah, my tonsils have white patches.\r\nDoctor: That plus no cough plus the fever — sounds like strep. I'd like you to stop by the lab today for a rapid strep, and assuming positive I'll call in penicillin V 500 mg four times a day for 10 days.\r\nPatient: I'm not allergic.\r\nDoctor: Good. In the meantime, take acetaminophen 500 mg every 6 hours as needed, gargle with warm salt water, and rest. If the rapid is negative we'll reassess.\r\nPatient: Thanks.\r\nDoctor: No follow-up scheduled — just message us if you're not better in 3 days on antibiotics.\r\n",
+  "gold": {
+    "chief_complaint": "severe sore throat with difficulty swallowing",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "penicillin V",
+        "dose": "500 mg",
+        "frequency": "four times a day",
+        "route": "PO"
+      },
+      {
+        "name": "acetaminophen",
+        "dose": "500 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "suspected streptococcal pharyngitis",
+        "icd10": "J02.0"
+      }
+    ],
+    "plan": [
+      "rapid strep test at the lab today",
+      "start penicillin V 500 mg four times a day for 10 days if positive",
+      "acetaminophen 500 mg every 6 hours as needed for pain",
+      "warm salt water gargles and rest",
+      "message if not improving in 3 days on antibiotics"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": null
+    }
+  },
+  "completedAt": "2026-05-01T10:07:08.880Z"
+}

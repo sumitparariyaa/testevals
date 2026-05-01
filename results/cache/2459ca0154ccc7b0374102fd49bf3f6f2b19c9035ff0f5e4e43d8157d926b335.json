@@ -1,0 +1,218 @@
+{
+  "transcriptId": "case_017",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "hyperlipidemia management",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "atorvastatin",
+        "dose": "20 mg",
+        "frequency": "once a day at bedtime",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "hyperlipidemia",
+        "icd10": "E78.5"
+      }
+    ],
+    "plan": [
+      "start atorvastatin 20 mg once a day at bedtime",
+      "Mediterranean-style diet with fewer refined carbs",
+      "150 minutes of moderate exercise weekly",
+      "recheck lipid panel and ALT in 3 months"
+    ],
+    "follow_up": {
+      "interval_days": 90,
+      "reason": "lipid and ALT recheck"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "hyperlipidemia management",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "hyperlipidemia",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "90",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "atorvastatin",
+              "dose": "20 mg",
+              "frequency": "once a day at bedtime",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "atorvastatin",
+              "dose": "20 mg",
+              "frequency": "once a day at bedtime",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "start atorvastatin 20 mg once a day at bedtime",
+            "gold": "start atorvastatin 20 mg once a day at bedtime"
+          },
+          {
+            "predicted": "Mediterranean-style diet with fewer refined carbs",
+            "gold": "Mediterranean-style diet with fewer refined carbs"
+          },
+          {
+            "predicted": "150 minutes of moderate exercise weekly",
+            "gold": "150 minutes of moderate exercise weekly"
+          },
+          {
+            "predicted": "recheck lipid panel and ALT in 3 months",
+            "gold": "recheck lipid panel and ALT in 3 months"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "cot",
+        "transcriptId": "case_017"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "hyperlipidemia management",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "atorvastatin",
+              "dose": "20 mg",
+              "frequency": "once a day at bedtime",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "hyperlipidemia",
+              "icd10": "E78.5"
+            }
+          ],
+          "plan": [
+            "start atorvastatin 20 mg once a day at bedtime",
+            "Mediterranean-style diet with fewer refined carbs",
+            "150 minutes of moderate exercise weekly",
+            "recheck lipid panel and ALT in 3 months"
+          ],
+          "follow_up": {
+            "interval_days": 90,
+            "reason": "lipid and ALT recheck"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "dd25af3e1241b9e2",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: in-person, lipid follow-up]\r\n\r\nDoctor: Hi Cynthia. Your lipid panel: total cholesterol 248, LDL 168, HDL 52, triglycerides 140.\r\nPatient: That LDL is high.\r\nDoctor: Yes. With your 10-year ASCVD risk and family history of early heart disease, I think a moderate-intensity statin makes sense. Let's start atorvastatin 20 mg once a day at bedtime.\r\nPatient: Any side effects to watch for?\r\nDoctor: Muscle aches, rare liver enzyme issues. If you have unexplained widespread muscle pain or dark urine, stop and call us. Otherwise it's well tolerated.\r\nPatient: Okay.\r\nDoctor: Continue Mediterranean-style diet, fewer refined carbs, and 150 minutes of moderate exercise weekly. We'll recheck a lipid panel and ALT in 3 months.\r\nPatient: Got it.\r\nDoctor: Follow up in 3 months. If LDL is below 100 we'll keep going.\r\n",
+  "gold": {
+    "chief_complaint": "hyperlipidemia management",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "atorvastatin",
+        "dose": "20 mg",
+        "frequency": "once a day at bedtime",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "hyperlipidemia",
+        "icd10": "E78.5"
+      }
+    ],
+    "plan": [
+      "start atorvastatin 20 mg once a day at bedtime",
+      "Mediterranean-style diet with fewer refined carbs",
+      "150 minutes of moderate exercise weekly",
+      "recheck lipid panel and ALT in 3 months"
+    ],
+    "follow_up": {
+      "interval_days": 90,
+      "reason": "lipid and ALT recheck"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:21.733Z"
+}

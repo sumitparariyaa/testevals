@@ -1,6 +1,17 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
+  "globalEnv": [
+    "ANTHROPIC_API_KEY",
+    "LLM_PROVIDER",
+    "DATABASE_URL",
+    "BETTER_AUTH_SECRET",
+    "BETTER_AUTH_URL",
+    "CORS_ORIGIN",
+    "EVAL_STORE_DIR",
+    "MAX_RUN_COST_USD",
+    "NEXT_PUBLIC_SERVER_URL"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],

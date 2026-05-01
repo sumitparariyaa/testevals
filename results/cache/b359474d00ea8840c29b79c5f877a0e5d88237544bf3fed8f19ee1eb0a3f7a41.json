@@ -1,0 +1,274 @@
+{
+  "transcriptId": "case_022",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "right knee pain with stiffness, worsening over a year",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "acetaminophen",
+        "dose": "1000 mg",
+        "frequency": "three times daily as needed",
+        "route": "PO"
+      },
+      {
+        "name": "diclofenac 1% gel",
+        "dose": null,
+        "frequency": "four times a day",
+        "route": "topical"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "osteoarthritis of the right knee",
+        "icd10": "M17.11"
+      }
+    ],
+    "plan": [
+      "acetaminophen 1000 mg three times daily as needed",
+      "topical diclofenac 1% gel four times a day",
+      "physical therapy referral for quadriceps strengthening",
+      "low-impact exercise such as swimming and stationary bike",
+      "weight loss",
+      "consider intra-articular steroid injection if no relief in 6 weeks"
+    ],
+    "follow_up": {
+      "interval_days": 42,
+      "reason": "knee OA recheck"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "right knee pain with stiffness, worsening over a year",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[2]",
+        "value": "physical therapy referral for quadriceps strengthening",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[3]",
+        "value": "low-impact exercise such as swimming and stationary bike",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[5]",
+        "value": "consider intra-articular steroid injection if no relief in 6 weeks",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "42",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "knee OA recheck",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "acetaminophen",
+              "dose": "1000 mg",
+              "frequency": "three times daily as needed",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "acetaminophen",
+              "dose": "1000 mg",
+              "frequency": "three times daily as needed",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "diclofenac 1% gel",
+              "dose": null,
+              "frequency": "four times a day",
+              "route": "topical"
+            },
+            "gold": {
+              "name": "diclofenac 1% gel",
+              "dose": null,
+              "frequency": "four times a day",
+              "route": "topical"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "acetaminophen 1000 mg three times daily as needed",
+            "gold": "acetaminophen 1000 mg three times daily as needed"
+          },
+          {
+            "predicted": "topical diclofenac 1% gel four times a day",
+            "gold": "topical diclofenac 1% gel four times a day"
+          },
+          {
+            "predicted": "physical therapy referral for quadriceps strengthening",
+            "gold": "physical therapy referral for quadriceps strengthening"
+          },
+          {
+            "predicted": "low-impact exercise such as swimming and stationary bike",
+            "gold": "low-impact exercise such as swimming and stationary bike"
+          },
+          {
+            "predicted": "weight loss",
+            "gold": "weight loss"
+          },
+          {
+            "predicted": "consider intra-articular steroid injection if no relief in 6 weeks",
+            "gold": "consider intra-articular steroid injection if no relief in 6 weeks"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "cot",
+        "transcriptId": "case_022"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "right knee pain with stiffness, worsening over a year",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "acetaminophen",
+              "dose": "1000 mg",
+              "frequency": "three times daily as needed",
+              "route": "PO"
+            },
+            {
+              "name": "diclofenac 1% gel",
+              "dose": null,
+              "frequency": "four times a day",
+              "route": "topical"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "osteoarthritis of the right knee",
+              "icd10": "M17.11"
+            }
+          ],
+          "plan": [
+            "acetaminophen 1000 mg three times daily as needed",
+            "topical diclofenac 1% gel four times a day",
+            "physical therapy referral for quadriceps strengthening",
+            "low-impact exercise such as swimming and stationary bike",
+            "weight loss",
+            "consider intra-articular steroid injection if no relief in 6 weeks"
+          ],
+          "follow_up": {
+            "interval_days": 42,
+            "reason": "knee OA recheck"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "dd25af3e1241b9e2",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person]\r\n\r\nDoctor: Hi Ruth. Knee pain?\r\nPatient: My right knee aches when I climb stairs and stiff in the morning for about 15 minutes. It's been getting worse over the last year. I'm 64.\r\nDoctor: Any locking, giving way, or recent injury?\r\nPatient: No.\r\nDoctor: Crepitus on flexion, mild bony enlargement at the medial joint line, no effusion. X-ray from last month showed medial joint space narrowing and osteophytes. This is osteoarthritis of the right knee.\r\nPatient: What can we do?\r\nDoctor: First-line is acetaminophen 1000 mg three times daily as needed and topical diclofenac 1% gel applied to the knee four times a day. Quadriceps strengthening — I'll refer you to physical therapy. If you're not getting relief in 6 weeks, we can talk about an intra-articular steroid injection.\r\nPatient: Okay.\r\nDoctor: Low-impact exercise — swimming, stationary bike. Weight loss if possible — even 5 to 10 pounds helps. Follow up in 6 weeks.\r\n",
+  "gold": {
+    "chief_complaint": "right knee pain with stiffness, worsening over a year",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "acetaminophen",
+        "dose": "1000 mg",
+        "frequency": "three times daily as needed",
+        "route": "PO"
+      },
+      {
+        "name": "diclofenac 1% gel",
+        "dose": null,
+        "frequency": "four times a day",
+        "route": "topical"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "osteoarthritis of the right knee",
+        "icd10": "M17.11"
+      }
+    ],
+    "plan": [
+      "acetaminophen 1000 mg three times daily as needed",
+      "topical diclofenac 1% gel four times a day",
+      "physical therapy referral for quadriceps strengthening",
+      "low-impact exercise such as swimming and stationary bike",
+      "weight loss",
+      "consider intra-articular steroid injection if no relief in 6 weeks"
+    ],
+    "follow_up": {
+      "interval_days": 42,
+      "reason": "knee OA recheck"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:22.415Z"
+}

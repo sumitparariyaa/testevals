@@ -1,0 +1,211 @@
+{
+  "transcriptId": "case_039",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "migraines twice a month with aura, poorly controlled",
+    "vitals": {
+      "bp": "124/78",
+      "hr": 76,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "sumatriptan",
+        "dose": "50 mg",
+        "frequency": "at first sign of migraine, may repeat in 2 hours, max 100 mg in 24 hours",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "migraine with aura",
+        "icd10": "G43.109"
+      }
+    ],
+    "plan": [
+      "sumatriptan 50 mg at first sign of migraine, may repeat in 2 hours, max 100 mg in 24 hours",
+      "track triggers including sleep, food, stress, dehydration",
+      "consider daily preventive therapy if more than 4 migraines a month"
+    ],
+    "follow_up": {
+      "interval_days": 56,
+      "reason": "migraine follow-up"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "migraines twice a month with aura, poorly controlled",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[1]",
+        "value": "track triggers including sleep, food, stress, dehydration",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[2]",
+        "value": "consider daily preventive therapy if more than 4 migraines a month",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "56",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "sumatriptan",
+              "dose": "50 mg",
+              "frequency": "at first sign of migraine, may repeat in 2 hours, max 100 mg in 24 hours",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "sumatriptan",
+              "dose": "50 mg",
+              "frequency": "at first sign of migraine, may repeat in 2 hours, max 100 mg in 24 hours",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "sumatriptan 50 mg at first sign of migraine, may repeat in 2 hours, max 100 mg in 24 hours",
+            "gold": "sumatriptan 50 mg at first sign of migraine, may repeat in 2 hours, max 100 mg in 24 hours"
+          },
+          {
+            "predicted": "track triggers including sleep, food, stress, dehydration",
+            "gold": "track triggers including sleep, food, stress, dehydration"
+          },
+          {
+            "predicted": "consider daily preventive therapy if more than 4 migraines a month",
+            "gold": "consider daily preventive therapy if more than 4 migraines a month"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "cot",
+        "transcriptId": "case_039"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "migraines twice a month with aura, poorly controlled",
+          "vitals": {
+            "bp": "124/78",
+            "hr": 76,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "sumatriptan",
+              "dose": "50 mg",
+              "frequency": "at first sign of migraine, may repeat in 2 hours, max 100 mg in 24 hours",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "migraine with aura",
+              "icd10": "G43.109"
+            }
+          ],
+          "plan": [
+            "sumatriptan 50 mg at first sign of migraine, may repeat in 2 hours, max 100 mg in 24 hours",
+            "track triggers including sleep, food, stress, dehydration",
+            "consider daily preventive therapy if more than 4 migraines a month"
+          ],
+          "follow_up": {
+            "interval_days": 56,
+            "reason": "migraine follow-up"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "dd25af3e1241b9e2",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person]\r\n[Vitals: BP 124/78, HR 76]\r\n\r\nDoctor: Hi Asha, headaches?\r\nPatient: I get migraines maybe twice a month. Throbbing one side, light bothers me, I get nauseous. Last 6 to 8 hours. Ibuprofen barely touches them.\r\nDoctor: Any aura?\r\nPatient: Sometimes shimmering lights for 20 minutes before.\r\nDoctor: Any vasculopathy risk factors? You're 28, no smoking or stroke history per your chart.\r\nPatient: Right.\r\nDoctor: Let's give you a triptan. Sumatriptan 50 mg by mouth at the first sign of migraine, may repeat in 2 hours if needed, max 100 mg in 24 hours. Avoid if you ever develop chest pain or new neurological symptoms with the headache.\r\nPatient: Got it.\r\nDoctor: Track triggers — sleep, food, stress, dehydration. If you start having more than 4 migraines a month we'll talk daily preventive therapy. Follow up in 8 weeks.\r\n",
+  "gold": {
+    "chief_complaint": "migraines twice a month with aura, poorly controlled",
+    "vitals": {
+      "bp": "124/78",
+      "hr": 76,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "sumatriptan",
+        "dose": "50 mg",
+        "frequency": "at first sign of migraine, may repeat in 2 hours, max 100 mg in 24 hours",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "migraine with aura",
+        "icd10": "G43.109"
+      }
+    ],
+    "plan": [
+      "sumatriptan 50 mg at first sign of migraine, may repeat in 2 hours, max 100 mg in 24 hours",
+      "track triggers including sleep, food, stress, dehydration",
+      "consider daily preventive therapy if more than 4 migraines a month"
+    ],
+    "follow_up": {
+      "interval_days": 56,
+      "reason": "migraine follow-up"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:25.744Z"
+}

@@ -1,0 +1,272 @@
+{
+  "transcriptId": "case_029",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "ADHD follow-up with afternoon symptom return",
+    "vitals": {
+      "bp": "124/80",
+      "hr": 84,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "methylphenidate ER",
+        "dose": "20 mg",
+        "frequency": "in the morning",
+        "route": "PO"
+      },
+      {
+        "name": "methylphenidate immediate-release",
+        "dose": "10 mg",
+        "frequency": "around 1 pm",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "attention deficit hyperactivity disorder",
+        "icd10": "F90.9"
+      }
+    ],
+    "plan": [
+      "continue methylphenidate ER 20 mg in the morning",
+      "add methylphenidate immediate-release 10 mg around 1 pm, not later than 2 pm",
+      "monitor blood pressure and heart rate",
+      "continue therapy and workplace strategies",
+      "call if chest pain or palpitations"
+    ],
+    "follow_up": {
+      "interval_days": 56,
+      "reason": "ADHD medication follow-up"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "ADHD follow-up with afternoon symptom return",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[1].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "attention deficit hyperactivity disorder",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[1]",
+        "value": "add methylphenidate immediate-release 10 mg around 1 pm, not later than 2 pm",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "56",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "ADHD medication follow-up",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "methylphenidate ER",
+              "dose": "20 mg",
+              "frequency": "in the morning",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "methylphenidate ER",
+              "dose": "20 mg",
+              "frequency": "in the morning",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "methylphenidate immediate-release",
+              "dose": "10 mg",
+              "frequency": "around 1 pm",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "methylphenidate immediate-release",
+              "dose": "10 mg",
+              "frequency": "around 1 pm",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "continue methylphenidate ER 20 mg in the morning",
+            "gold": "continue methylphenidate ER 20 mg in the morning"
+          },
+          {
+            "predicted": "add methylphenidate immediate-release 10 mg around 1 pm, not later than 2 pm",
+            "gold": "add methylphenidate immediate-release 10 mg around 1 pm, not later than 2 pm"
+          },
+          {
+            "predicted": "monitor blood pressure and heart rate",
+            "gold": "monitor blood pressure and heart rate"
+          },
+          {
+            "predicted": "continue therapy and workplace strategies",
+            "gold": "continue therapy and workplace strategies"
+          },
+          {
+            "predicted": "call if chest pain or palpitations",
+            "gold": "call if chest pain or palpitations"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "cot",
+        "transcriptId": "case_029"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "ADHD follow-up with afternoon symptom return",
+          "vitals": {
+            "bp": "124/80",
+            "hr": 84,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "methylphenidate ER",
+              "dose": "20 mg",
+              "frequency": "in the morning",
+              "route": "PO"
+            },
+            {
+              "name": "methylphenidate immediate-release",
+              "dose": "10 mg",
+              "frequency": "around 1 pm",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "attention deficit hyperactivity disorder",
+              "icd10": "F90.9"
+            }
+          ],
+          "plan": [
+            "continue methylphenidate ER 20 mg in the morning",
+            "add methylphenidate immediate-release 10 mg around 1 pm, not later than 2 pm",
+            "monitor blood pressure and heart rate",
+            "continue therapy and workplace strategies",
+            "call if chest pain or palpitations"
+          ],
+          "follow_up": {
+            "interval_days": 56,
+            "reason": "ADHD medication follow-up"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "dd25af3e1241b9e2",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person, ADHD follow-up]\r\n[Vitals: BP 124/80, HR 84]\r\n\r\nDoctor: Hi Caleb. How's the methylphenidate working?\r\nPatient: The 20 mg ER in the morning gets me through about 6 hours, then it crashes hard. Afternoons at work are tough.\r\nDoctor: Any cardiac side effects, decreased appetite, sleep issues?\r\nPatient: Some appetite suppression at lunch but I still eat dinner. Sleep is fine.\r\nDoctor: Let's add a short-acting booster. Continue methylphenidate ER 20 mg in the morning, and add immediate-release methylphenidate 10 mg around 1 pm.\r\nPatient: Will that affect sleep?\r\nDoctor: That timing should clear by bedtime. Don't take it later than 2 pm.\r\nPatient: Okay.\r\nDoctor: Same monitoring — blood pressure, heart rate. Continue therapy and the workplace strategies. Come back in 8 weeks. Call if any chest pain or palpitations.\r\n",
+  "gold": {
+    "chief_complaint": "ADHD follow-up with afternoon symptom return",
+    "vitals": {
+      "bp": "124/80",
+      "hr": 84,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "methylphenidate ER",
+        "dose": "20 mg",
+        "frequency": "in the morning",
+        "route": "PO"
+      },
+      {
+        "name": "methylphenidate immediate-release",
+        "dose": "10 mg",
+        "frequency": "around 1 pm",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "attention deficit hyperactivity disorder",
+        "icd10": "F90.9"
+      }
+    ],
+    "plan": [
+      "continue methylphenidate ER 20 mg in the morning",
+      "add methylphenidate immediate-release 10 mg around 1 pm, not later than 2 pm",
+      "monitor blood pressure and heart rate",
+      "continue therapy and workplace strategies",
+      "call if chest pain or palpitations"
+    ],
+    "follow_up": {
+      "interval_days": 56,
+      "reason": "ADHD medication follow-up"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:23.391Z"
+}

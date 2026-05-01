@@ -1,0 +1,227 @@
+{
+  "transcriptId": "case_025",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "right heel pain for six weeks, worse with first steps",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "naproxen",
+        "dose": "220 mg",
+        "frequency": "twice a day with food",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "plantar fasciitis",
+        "icd10": "M72.2"
+      }
+    ],
+    "plan": [
+      "calf and plantar fascia stretching exercises",
+      "supportive shoes, no walking barefoot at home",
+      "over-the-counter heel cushions",
+      "naproxen 220 mg twice a day with food for 10 days",
+      "consider night splint if mornings stay rough",
+      "return in 8 weeks if no progress for PT referral or steroid injection"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "return in 8 weeks if no progress"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "right heel pain for six weeks, worse with first steps",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[5]",
+        "value": "return in 8 weeks if no progress for PT referral or steroid injection",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "return in 8 weeks if no progress",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "naproxen",
+              "dose": "220 mg",
+              "frequency": "twice a day with food",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "naproxen",
+              "dose": "220 mg",
+              "frequency": "twice a day with food",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "calf and plantar fascia stretching exercises",
+            "gold": "calf and plantar fascia stretching exercises"
+          },
+          {
+            "predicted": "supportive shoes, no walking barefoot at home",
+            "gold": "supportive shoes, no walking barefoot at home"
+          },
+          {
+            "predicted": "over-the-counter heel cushions",
+            "gold": "over-the-counter heel cushions"
+          },
+          {
+            "predicted": "naproxen 220 mg twice a day with food for 10 days",
+            "gold": "naproxen 220 mg twice a day with food for 10 days"
+          },
+          {
+            "predicted": "consider night splint if mornings stay rough",
+            "gold": "consider night splint if mornings stay rough"
+          },
+          {
+            "predicted": "return in 8 weeks if no progress for PT referral or steroid injection",
+            "gold": "return in 8 weeks if no progress for PT referral or steroid injection"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "few_shot",
+        "transcriptId": "case_025"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "right heel pain for six weeks, worse with first steps",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "naproxen",
+              "dose": "220 mg",
+              "frequency": "twice a day with food",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "plantar fasciitis",
+              "icd10": "M72.2"
+            }
+          ],
+          "plan": [
+            "calf and plantar fascia stretching exercises",
+            "supportive shoes, no walking barefoot at home",
+            "over-the-counter heel cushions",
+            "naproxen 220 mg twice a day with food for 10 days",
+            "consider night splint if mornings stay rough",
+            "return in 8 weeks if no progress for PT referral or steroid injection"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": "return in 8 weeks if no progress"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "0104e919dec297ce",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: in-person]\r\n\r\nDoctor: Hi Maria, heel pain?\r\nPatient: My right heel hurts every morning when I get out of bed. The first few steps are awful, then it loosens up. Worst after I sit for a while too. It's been six weeks.\r\nDoctor: Any trauma? Numbness?\r\nPatient: No.\r\nDoctor: Tenderness right at the medial calcaneal tubercle, pain reproduced with dorsiflexion of the toes. Classic plantar fasciitis.\r\nPatient: What helps?\r\nDoctor: Calf and plantar fascia stretching — I'll print exercises. Wear supportive shoes, no walking barefoot at home. Try over-the-counter heel cushions. Naproxen 220 mg twice a day with food for 10 days for pain. Consider a night splint if mornings stay rough after a few weeks.\r\nPatient: Anything else?\r\nDoctor: Most cases improve over 3 to 6 months. If you're not seeing progress in 8 weeks, come back and we'll consider PT referral or a steroid injection.\r\n",
+  "gold": {
+    "chief_complaint": "right heel pain for six weeks, worse with first steps",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "naproxen",
+        "dose": "220 mg",
+        "frequency": "twice a day with food",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "plantar fasciitis",
+        "icd10": "M72.2"
+      }
+    ],
+    "plan": [
+      "calf and plantar fascia stretching exercises",
+      "supportive shoes, no walking barefoot at home",
+      "over-the-counter heel cushions",
+      "naproxen 220 mg twice a day with food for 10 days",
+      "consider night splint if mornings stay rough",
+      "return in 8 weeks if no progress for PT referral or steroid injection"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "return in 8 weeks if no progress"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:12.122Z"
+}

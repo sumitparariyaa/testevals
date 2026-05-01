@@ -1,0 +1,247 @@
+{
+  "transcriptId": "case_036",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "dysuria, urinary frequency, and urgency for two days",
+    "vitals": {
+      "bp": "110/70",
+      "hr": 88,
+      "temp_f": 99.4,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "nitrofurantoin",
+        "dose": "100 mg",
+        "frequency": "twice daily",
+        "route": "PO"
+      },
+      {
+        "name": "phenazopyridine",
+        "dose": "200 mg",
+        "frequency": "three times a day with meals",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "uncomplicated urinary tract infection",
+        "icd10": "N39.0"
+      }
+    ],
+    "plan": [
+      "send urine culture",
+      "nitrofurantoin 100 mg twice daily for 5 days",
+      "phenazopyridine 200 mg three times a day with meals for up to 2 days for burning",
+      "drink plenty of water",
+      "call if flank pain, fever above 101, or not better in 48 hours"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": null
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "dysuria, urinary frequency, and urgency for two days",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "uncomplicated urinary tract infection",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "nitrofurantoin",
+              "dose": "100 mg",
+              "frequency": "twice daily",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "nitrofurantoin",
+              "dose": "100 mg",
+              "frequency": "twice daily",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "phenazopyridine",
+              "dose": "200 mg",
+              "frequency": "three times a day with meals",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "phenazopyridine",
+              "dose": "200 mg",
+              "frequency": "three times a day with meals",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "send urine culture",
+            "gold": "send urine culture"
+          },
+          {
+            "predicted": "nitrofurantoin 100 mg twice daily for 5 days",
+            "gold": "nitrofurantoin 100 mg twice daily for 5 days"
+          },
+          {
+            "predicted": "phenazopyridine 200 mg three times a day with meals for up to 2 days for burning",
+            "gold": "phenazopyridine 200 mg three times a day with meals for up to 2 days for burning"
+          },
+          {
+            "predicted": "drink plenty of water",
+            "gold": "drink plenty of water"
+          },
+          {
+            "predicted": "call if flank pain, fever above 101, or not better in 48 hours",
+            "gold": "call if flank pain, fever above 101, or not better in 48 hours"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_036"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "dysuria, urinary frequency, and urgency for two days",
+          "vitals": {
+            "bp": "110/70",
+            "hr": 88,
+            "temp_f": 99.4,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "nitrofurantoin",
+              "dose": "100 mg",
+              "frequency": "twice daily",
+              "route": "PO"
+            },
+            {
+              "name": "phenazopyridine",
+              "dose": "200 mg",
+              "frequency": "three times a day with meals",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "uncomplicated urinary tract infection",
+              "icd10": "N39.0"
+            }
+          ],
+          "plan": [
+            "send urine culture",
+            "nitrofurantoin 100 mg twice daily for 5 days",
+            "phenazopyridine 200 mg three times a day with meals for up to 2 days for burning",
+            "drink plenty of water",
+            "call if flank pain, fever above 101, or not better in 48 hours"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": null
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person]\r\n[Vitals: BP 110/70, HR 88, Temp 99.4]\r\n\r\nDoctor: Hi Emma. What brings you in?\r\nPatient: Burning when I pee, going more often, urgency. Started two days ago. No fever, no back pain.\r\nDoctor: Any vaginal discharge or pelvic pain?\r\nPatient: No.\r\nDoctor: Sexually active?\r\nPatient: Yes, monogamous.\r\nDoctor: Urine dip in the office: positive nitrites and leukocyte esterase. Classic uncomplicated UTI.\r\nPatient: I had one last year too.\r\nDoctor: We'll send a culture but go ahead and start treatment. Nitrofurantoin 100 mg twice daily for 5 days. Drink plenty of water. You can also use phenazopyridine 200 mg three times a day with meals for up to 2 days for the burning — just know it turns urine orange.\r\nPatient: Okay.\r\nDoctor: If you develop flank pain, fever above 101, or you're not better in 48 hours, call us. Otherwise no follow-up.\r\n",
+  "gold": {
+    "chief_complaint": "dysuria, urinary frequency, and urgency for two days",
+    "vitals": {
+      "bp": "110/70",
+      "hr": 88,
+      "temp_f": 99.4,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "nitrofurantoin",
+        "dose": "100 mg",
+        "frequency": "twice daily",
+        "route": "PO"
+      },
+      {
+        "name": "phenazopyridine",
+        "dose": "200 mg",
+        "frequency": "three times a day with meals",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "uncomplicated urinary tract infection",
+        "icd10": "N39.0"
+      }
+    ],
+    "plan": [
+      "send urine culture",
+      "nitrofurantoin 100 mg twice daily for 5 days",
+      "phenazopyridine 200 mg three times a day with meals for up to 2 days for burning",
+      "drink plenty of water",
+      "call if flank pain, fever above 101, or not better in 48 hours"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": null
+    }
+  },
+  "completedAt": "2026-05-01T10:06:46.605Z"
+}

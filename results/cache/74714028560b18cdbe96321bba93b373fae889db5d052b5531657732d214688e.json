@@ -1,0 +1,215 @@
+{
+  "transcriptId": "case_024",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "left ankle injury after rolling it playing basketball",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "ibuprofen",
+        "dose": "400 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "grade 2 lateral ankle sprain, left",
+        "icd10": "S93.42"
+      }
+    ],
+    "plan": [
+      "RICE: rest, ice 20 minutes every 2 to 3 hours for first 48 hours, compression with ACE wrap, elevation",
+      "ibuprofen 400 mg every 6 hours as needed for pain and swelling",
+      "weight-bear as tolerated, crutches if needed",
+      "begin ankle range-of-motion exercises in a few days",
+      "return for imaging if not improving in 7 to 10 days"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": null
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "left ankle injury after rolling it playing basketball",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[4]",
+        "value": "return for imaging if not improving in 7 to 10 days",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "ibuprofen",
+              "dose": "400 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "ibuprofen",
+              "dose": "400 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "RICE: rest, ice 20 minutes every 2 to 3 hours for first 48 hours, compression with ACE wrap, elevation",
+            "gold": "RICE: rest, ice 20 minutes every 2 to 3 hours for first 48 hours, compression with ACE wrap, elevation"
+          },
+          {
+            "predicted": "ibuprofen 400 mg every 6 hours as needed for pain and swelling",
+            "gold": "ibuprofen 400 mg every 6 hours as needed for pain and swelling"
+          },
+          {
+            "predicted": "weight-bear as tolerated, crutches if needed",
+            "gold": "weight-bear as tolerated, crutches if needed"
+          },
+          {
+            "predicted": "begin ankle range-of-motion exercises in a few days",
+            "gold": "begin ankle range-of-motion exercises in a few days"
+          },
+          {
+            "predicted": "return for imaging if not improving in 7 to 10 days",
+            "gold": "return for imaging if not improving in 7 to 10 days"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_024"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "left ankle injury after rolling it playing basketball",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "ibuprofen",
+              "dose": "400 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "grade 2 lateral ankle sprain, left",
+              "icd10": "S93.42"
+            }
+          ],
+          "plan": [
+            "RICE: rest, ice 20 minutes every 2 to 3 hours for first 48 hours, compression with ACE wrap, elevation",
+            "ibuprofen 400 mg every 6 hours as needed for pain and swelling",
+            "weight-bear as tolerated, crutches if needed",
+            "begin ankle range-of-motion exercises in a few days",
+            "return for imaging if not improving in 7 to 10 days"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": null
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: in-person urgent]\r\n\r\nDoctor: Hi Jordan, ankle injury?\r\nPatient: I rolled my left ankle playing basketball yesterday. Heard a pop. It swelled up immediately.\r\nDoctor: Could you walk afterwards?\r\nPatient: Limped on it but yes, I could put weight on it.\r\nDoctor: Tenderness over the lateral malleolus, swelling, no bony tenderness over the posterior edge of the malleolus or fifth metatarsal base. Per Ottawa rules, no X-ray needed. This is a grade 2 lateral ankle sprain.\r\nPatient: What now?\r\nDoctor: RICE — rest, ice 20 minutes every 2 to 3 hours for the first 48 hours, compression with an ACE wrap, and elevation. Ibuprofen 400 mg every 6 hours as needed for pain and swelling. Use crutches if needed but try to weight-bear as tolerated.\r\nPatient: When can I go back to basketball?\r\nDoctor: Probably 2 to 4 weeks. Start ankle range-of-motion exercises in a few days. If pain or swelling isn't improving in 7 to 10 days, come back and we'll image. Otherwise no follow-up.\r\n",
+  "gold": {
+    "chief_complaint": "left ankle injury after rolling it playing basketball",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "ibuprofen",
+        "dose": "400 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "grade 2 lateral ankle sprain, left",
+        "icd10": "S93.42"
+      }
+    ],
+    "plan": [
+      "RICE: rest, ice 20 minutes every 2 to 3 hours for first 48 hours, compression with ACE wrap, elevation",
+      "ibuprofen 400 mg every 6 hours as needed for pain and swelling",
+      "weight-bear as tolerated, crutches if needed",
+      "begin ankle range-of-motion exercises in a few days",
+      "return for imaging if not improving in 7 to 10 days"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": null
+    }
+  },
+  "completedAt": "2026-05-01T10:06:44.756Z"
+}

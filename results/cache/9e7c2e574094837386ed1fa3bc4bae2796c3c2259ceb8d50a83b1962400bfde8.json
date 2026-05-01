@@ -1,0 +1,299 @@
+{
+  "transcriptId": "case_006",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "seasonal allergies with itchy eyes, sneezing, runny nose",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "fluticasone nasal spray",
+        "dose": "two sprays each nostril",
+        "frequency": "once daily",
+        "route": "intranasal"
+      },
+      {
+        "name": "cetirizine",
+        "dose": "10 mg",
+        "frequency": "at bedtime",
+        "route": "PO"
+      },
+      {
+        "name": "ketotifen ophthalmic drops",
+        "dose": "one drop each eye",
+        "frequency": "twice daily as needed",
+        "route": "topical"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "allergic rhinitis",
+        "icd10": "J30.9"
+      }
+    ],
+    "plan": [
+      "stop loratadine",
+      "start fluticasone nasal spray two sprays each nostril once daily",
+      "add cetirizine 10 mg at bedtime",
+      "ketotifen ophthalmic drops one drop each eye twice daily as needed",
+      "message in three weeks if not improved to discuss allergy testing or referral"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "message if not improved in three weeks"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "seasonal allergies with itchy eyes, sneezing, runny nose",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "intranasal",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[1].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[2].route",
+        "value": "topical",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[4]",
+        "value": "message in three weeks if not improved to discuss allergy testing or referral",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "message if not improved in three weeks",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "fluticasone nasal spray",
+              "dose": "two sprays each nostril",
+              "frequency": "once daily",
+              "route": "intranasal"
+            },
+            "gold": {
+              "name": "fluticasone nasal spray",
+              "dose": "two sprays each nostril",
+              "frequency": "once daily",
+              "route": "intranasal"
+            }
+          },
+          {
+            "predicted": {
+              "name": "cetirizine",
+              "dose": "10 mg",
+              "frequency": "at bedtime",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "cetirizine",
+              "dose": "10 mg",
+              "frequency": "at bedtime",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "ketotifen ophthalmic drops",
+              "dose": "one drop each eye",
+              "frequency": "twice daily as needed",
+              "route": "topical"
+            },
+            "gold": {
+              "name": "ketotifen ophthalmic drops",
+              "dose": "one drop each eye",
+              "frequency": "twice daily as needed",
+              "route": "topical"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "stop loratadine",
+            "gold": "stop loratadine"
+          },
+          {
+            "predicted": "start fluticasone nasal spray two sprays each nostril once daily",
+            "gold": "start fluticasone nasal spray two sprays each nostril once daily"
+          },
+          {
+            "predicted": "add cetirizine 10 mg at bedtime",
+            "gold": "add cetirizine 10 mg at bedtime"
+          },
+          {
+            "predicted": "ketotifen ophthalmic drops one drop each eye twice daily as needed",
+            "gold": "ketotifen ophthalmic drops one drop each eye twice daily as needed"
+          },
+          {
+            "predicted": "message in three weeks if not improved to discuss allergy testing or referral",
+            "gold": "message in three weeks if not improved to discuss allergy testing or referral"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "cot",
+        "transcriptId": "case_006"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "seasonal allergies with itchy eyes, sneezing, runny nose",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "fluticasone nasal spray",
+              "dose": "two sprays each nostril",
+              "frequency": "once daily",
+              "route": "intranasal"
+            },
+            {
+              "name": "cetirizine",
+              "dose": "10 mg",
+              "frequency": "at bedtime",
+              "route": "PO"
+            },
+            {
+              "name": "ketotifen ophthalmic drops",
+              "dose": "one drop each eye",
+              "frequency": "twice daily as needed",
+              "route": "topical"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "allergic rhinitis",
+              "icd10": "J30.9"
+            }
+          ],
+          "plan": [
+            "stop loratadine",
+            "start fluticasone nasal spray two sprays each nostril once daily",
+            "add cetirizine 10 mg at bedtime",
+            "ketotifen ophthalmic drops one drop each eye twice daily as needed",
+            "message in three weeks if not improved to discuss allergy testing or referral"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": "message if not improved in three weeks"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "dd25af3e1241b9e2",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: telehealth follow-up]\r\n\r\nDoctor: Hi Hannah, you're calling about your seasonal allergies?\r\nPatient: Yeah. Every spring my eyes itch, I sneeze constantly, my nose runs. It's been two weeks of misery. Loratadine isn't doing much this year.\r\nDoctor: Any ear pain, fever, or thick discolored mucus?\r\nPatient: No, it's all clear and watery.\r\nDoctor: Classic allergic rhinitis. Let's step you up. Stop the loratadine. I want you to start fluticasone nasal spray, two sprays in each nostril once daily, and add cetirizine 10 mg at bedtime. Give it two weeks of consistent use to see the full effect.\r\nPatient: Okay. Anything for the eyes?\r\nDoctor: Try ketotifen ophthalmic drops, one drop in each eye twice daily as needed.\r\nPatient: Got it.\r\nDoctor: If you're still struggling in three weeks, message me and we'll talk about allergy testing or referral. No formal follow-up needed otherwise.\r\n",
+  "gold": {
+    "chief_complaint": "seasonal allergies with itchy eyes, sneezing, runny nose",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "fluticasone nasal spray",
+        "dose": "two sprays each nostril",
+        "frequency": "once daily",
+        "route": "intranasal"
+      },
+      {
+        "name": "cetirizine",
+        "dose": "10 mg",
+        "frequency": "at bedtime",
+        "route": "PO"
+      },
+      {
+        "name": "ketotifen ophthalmic drops",
+        "dose": "one drop each eye",
+        "frequency": "twice daily as needed",
+        "route": "topical"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "allergic rhinitis",
+        "icd10": "J30.9"
+      }
+    ],
+    "plan": [
+      "stop loratadine",
+      "start fluticasone nasal spray two sprays each nostril once daily",
+      "add cetirizine 10 mg at bedtime",
+      "ketotifen ophthalmic drops one drop each eye twice daily as needed",
+      "message in three weeks if not improved to discuss allergy testing or referral"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "message if not improved in three weeks"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:20.226Z"
+}

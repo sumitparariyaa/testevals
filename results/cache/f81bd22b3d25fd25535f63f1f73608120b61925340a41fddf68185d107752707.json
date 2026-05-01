@@ -1,0 +1,262 @@
+{
+  "transcriptId": "case_035",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "right calf redness, warmth, and swelling for two days",
+    "vitals": {
+      "bp": "130/82",
+      "hr": 96,
+      "temp_f": 100.8,
+      "spo2": 98
+    },
+    "medications": [
+      {
+        "name": "cephalexin",
+        "dose": "500 mg",
+        "frequency": "four times a day",
+        "route": "PO"
+      },
+      {
+        "name": "acetaminophen",
+        "dose": "650 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "cellulitis of right lower leg",
+        "icd10": "L03.115"
+      }
+    ],
+    "plan": [
+      "cephalexin 500 mg four times a day for 7 days",
+      "mark borders of erythema and monitor",
+      "ER if expansion beyond line, worse fever, vomiting, or streaking",
+      "elevate leg when possible",
+      "acetaminophen 650 mg every 6 hours as needed for pain and fever"
+    ],
+    "follow_up": {
+      "interval_days": 3,
+      "reason": "cellulitis recheck"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "right calf redness, warmth, and swelling for two days",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "cellulitis of right lower leg",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[1]",
+        "value": "mark borders of erythema and monitor",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[2]",
+        "value": "ER if expansion beyond line, worse fever, vomiting, or streaking",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[3]",
+        "value": "elevate leg when possible",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "cephalexin",
+              "dose": "500 mg",
+              "frequency": "four times a day",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "cephalexin",
+              "dose": "500 mg",
+              "frequency": "four times a day",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "acetaminophen",
+              "dose": "650 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "acetaminophen",
+              "dose": "650 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "cephalexin 500 mg four times a day for 7 days",
+            "gold": "cephalexin 500 mg four times a day for 7 days"
+          },
+          {
+            "predicted": "mark borders of erythema and monitor",
+            "gold": "mark borders of erythema and monitor"
+          },
+          {
+            "predicted": "ER if expansion beyond line, worse fever, vomiting, or streaking",
+            "gold": "ER if expansion beyond line, worse fever, vomiting, or streaking"
+          },
+          {
+            "predicted": "elevate leg when possible",
+            "gold": "elevate leg when possible"
+          },
+          {
+            "predicted": "acetaminophen 650 mg every 6 hours as needed for pain and fever",
+            "gold": "acetaminophen 650 mg every 6 hours as needed for pain and fever"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "cot",
+        "transcriptId": "case_035"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "right calf redness, warmth, and swelling for two days",
+          "vitals": {
+            "bp": "130/82",
+            "hr": 96,
+            "temp_f": 100.8,
+            "spo2": 98
+          },
+          "medications": [
+            {
+              "name": "cephalexin",
+              "dose": "500 mg",
+              "frequency": "four times a day",
+              "route": "PO"
+            },
+            {
+              "name": "acetaminophen",
+              "dose": "650 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "cellulitis of right lower leg",
+              "icd10": "L03.115"
+            }
+          ],
+          "plan": [
+            "cephalexin 500 mg four times a day for 7 days",
+            "mark borders of erythema and monitor",
+            "ER if expansion beyond line, worse fever, vomiting, or streaking",
+            "elevate leg when possible",
+            "acetaminophen 650 mg every 6 hours as needed for pain and fever"
+          ],
+          "follow_up": {
+            "interval_days": 3,
+            "reason": "cellulitis recheck"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "dd25af3e1241b9e2",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: in-person urgent]\r\n[Vitals: BP 130/82, HR 96, Temp 100.8, SpO2 98%]\r\n\r\nDoctor: Hi Patricia, what's going on with your leg?\r\nPatient: My right calf has been red and warm and swollen for two days. I scraped it gardening last week. The redness is spreading.\r\nDoctor: Any fever, chills?\r\nPatient: Felt feverish yesterday and today.\r\nDoctor: Right calf with about 8 cm of erythema, warmth, mild edema, no fluctuance, no streaking. There's a small abrasion at the center. This is cellulitis.\r\nPatient: Is it serious?\r\nDoctor: It's caught early. Outpatient antibiotics should do. Cephalexin 500 mg four times a day for 7 days. Mark the borders of the redness with a pen and watch — if it expands beyond the line, or you get worse fever, vomiting, streaking, come to the ER.\r\nPatient: Got it.\r\nDoctor: Elevate the leg when you can. Acetaminophen 650 mg every 6 hours as needed for pain and fever. Come back in 3 days for a recheck.\r\n",
+  "gold": {
+    "chief_complaint": "right calf redness, warmth, and swelling for two days",
+    "vitals": {
+      "bp": "130/82",
+      "hr": 96,
+      "temp_f": 100.8,
+      "spo2": 98
+    },
+    "medications": [
+      {
+        "name": "cephalexin",
+        "dose": "500 mg",
+        "frequency": "four times a day",
+        "route": "PO"
+      },
+      {
+        "name": "acetaminophen",
+        "dose": "650 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "cellulitis of right lower leg",
+        "icd10": "L03.115"
+      }
+    ],
+    "plan": [
+      "cephalexin 500 mg four times a day for 7 days",
+      "mark borders of erythema and monitor",
+      "ER if expansion beyond line, worse fever, vomiting, or streaking",
+      "elevate leg when possible",
+      "acetaminophen 650 mg every 6 hours as needed for pain and fever"
+    ],
+    "follow_up": {
+      "interval_days": 3,
+      "reason": "cellulitis recheck"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:25.035Z"
+}

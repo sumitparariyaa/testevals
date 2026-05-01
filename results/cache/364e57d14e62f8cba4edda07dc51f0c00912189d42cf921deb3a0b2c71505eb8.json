@@ -1,0 +1,272 @@
+{
+  "transcriptId": "case_011",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "chronic constipation for a couple months",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "psyllium husk",
+        "dose": "one tablespoon",
+        "frequency": "once a day",
+        "route": "PO"
+      },
+      {
+        "name": "polyethylene glycol",
+        "dose": "17 grams",
+        "frequency": "once daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "chronic constipation",
+        "icd10": "K59.00"
+      }
+    ],
+    "plan": [
+      "psyllium husk one tablespoon mixed in water once a day, increase to twice if needed",
+      "drink at least 64 ounces of water a day",
+      "polyethylene glycol 17 grams in 8 ounces of water once daily for two weeks",
+      "daily walking",
+      "return sooner for blood, weight loss, or severe pain"
+    ],
+    "follow_up": {
+      "interval_days": 28,
+      "reason": "constipation recheck"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "chronic constipation for a couple months",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "chronic constipation",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[0]",
+        "value": "psyllium husk one tablespoon mixed in water once a day, increase to twice if needed",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[3]",
+        "value": "daily walking",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[4]",
+        "value": "return sooner for blood, weight loss, or severe pain",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "28",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "constipation recheck",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "psyllium husk",
+              "dose": "one tablespoon",
+              "frequency": "once a day",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "psyllium husk",
+              "dose": "one tablespoon",
+              "frequency": "once a day",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "polyethylene glycol",
+              "dose": "17 grams",
+              "frequency": "once daily",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "polyethylene glycol",
+              "dose": "17 grams",
+              "frequency": "once daily",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "psyllium husk one tablespoon mixed in water once a day, increase to twice if needed",
+            "gold": "psyllium husk one tablespoon mixed in water once a day, increase to twice if needed"
+          },
+          {
+            "predicted": "drink at least 64 ounces of water a day",
+            "gold": "drink at least 64 ounces of water a day"
+          },
+          {
+            "predicted": "polyethylene glycol 17 grams in 8 ounces of water once daily for two weeks",
+            "gold": "polyethylene glycol 17 grams in 8 ounces of water once daily for two weeks"
+          },
+          {
+            "predicted": "daily walking",
+            "gold": "daily walking"
+          },
+          {
+            "predicted": "return sooner for blood, weight loss, or severe pain",
+            "gold": "return sooner for blood, weight loss, or severe pain"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "few_shot",
+        "transcriptId": "case_011"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "chronic constipation for a couple months",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "psyllium husk",
+              "dose": "one tablespoon",
+              "frequency": "once a day",
+              "route": "PO"
+            },
+            {
+              "name": "polyethylene glycol",
+              "dose": "17 grams",
+              "frequency": "once daily",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "chronic constipation",
+              "icd10": "K59.00"
+            }
+          ],
+          "plan": [
+            "psyllium husk one tablespoon mixed in water once a day, increase to twice if needed",
+            "drink at least 64 ounces of water a day",
+            "polyethylene glycol 17 grams in 8 ounces of water once daily for two weeks",
+            "daily walking",
+            "return sooner for blood, weight loss, or severe pain"
+          ],
+          "follow_up": {
+            "interval_days": 28,
+            "reason": "constipation recheck"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "0104e919dec297ce",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: in-person]\r\n\r\nDoctor: Hi Eleanor, how can I help?\r\nPatient: I've been so constipated. I might go once every 4 or 5 days, and when I do it's hard and painful. This has been going on for a couple months.\r\nDoctor: Any blood in your stool? Weight loss? Family history of colon cancer?\r\nPatient: No blood, no weight loss. Mom had a polyp once but no cancer.\r\nDoctor: How much water are you drinking? Fiber intake?\r\nPatient: Not much, honestly. Maybe two glasses a day. I don't eat a lot of vegetables.\r\nDoctor: Let's start with lifestyle and a stool softener. I want you to add a fiber supplement — psyllium husk, one tablespoon mixed in water once a day to start, and we can go to twice if needed. Also drink at least 64 ounces of water a day. Start polyethylene glycol 17 grams in 8 ounces of water once daily for the next two weeks to get things moving, then we'll wean.\r\nPatient: Okay.\r\nDoctor: Walk daily if you can. Come back in 4 weeks. If you ever see blood, lose weight unintentionally, or have severe pain, come in sooner.\r\n",
+  "gold": {
+    "chief_complaint": "chronic constipation for a couple months",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "psyllium husk",
+        "dose": "one tablespoon",
+        "frequency": "once a day",
+        "route": "PO"
+      },
+      {
+        "name": "polyethylene glycol",
+        "dose": "17 grams",
+        "frequency": "once daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "chronic constipation",
+        "icd10": "K59.00"
+      }
+    ],
+    "plan": [
+      "psyllium husk one tablespoon mixed in water once a day, increase to twice if needed",
+      "drink at least 64 ounces of water a day",
+      "polyethylene glycol 17 grams in 8 ounces of water once daily for two weeks",
+      "daily walking",
+      "return sooner for blood, weight loss, or severe pain"
+    ],
+    "follow_up": {
+      "interval_days": 28,
+      "reason": "constipation recheck"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:10.223Z"
+}

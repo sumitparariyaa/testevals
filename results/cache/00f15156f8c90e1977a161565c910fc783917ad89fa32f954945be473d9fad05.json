@@ -1,0 +1,340 @@
+{
+  "transcriptId": "case_016",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "hypertension follow-up with elevated blood pressure",
+    "vitals": {
+      "bp": "152/96",
+      "hr": 84,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "amlodipine",
+        "dose": "5 mg",
+        "frequency": "once daily",
+        "route": "PO"
+      },
+      {
+        "name": "losartan",
+        "dose": "25 mg",
+        "frequency": "once daily",
+        "route": "PO"
+      },
+      {
+        "name": "acetaminophen",
+        "dose": "650 mg",
+        "frequency": "up to four times a day as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "uncontrolled essential hypertension",
+        "icd10": "I10"
+      }
+    ],
+    "plan": [
+      "continue amlodipine 5 mg once daily",
+      "add losartan 25 mg once daily",
+      "stop naproxen",
+      "use acetaminophen 650 mg up to four times a day for back pain",
+      "low-salt diet under 2 grams a day",
+      "30 minutes of walking five days a week",
+      "home BP log twice a day",
+      "basic metabolic panel before next visit"
+    ],
+    "follow_up": {
+      "interval_days": 28,
+      "reason": "blood pressure recheck"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "hypertension follow-up with elevated blood pressure",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[1].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[2].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "uncontrolled essential hypertension",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[0]",
+        "value": "continue amlodipine 5 mg once daily",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[3]",
+        "value": "use acetaminophen 650 mg up to four times a day for back pain",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[4]",
+        "value": "low-salt diet under 2 grams a day",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[7]",
+        "value": "basic metabolic panel before next visit",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "28",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "amlodipine",
+              "dose": "5 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "amlodipine",
+              "dose": "5 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "losartan",
+              "dose": "25 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "losartan",
+              "dose": "25 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "acetaminophen",
+              "dose": "650 mg",
+              "frequency": "up to four times a day as needed",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "acetaminophen",
+              "dose": "650 mg",
+              "frequency": "up to four times a day as needed",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "continue amlodipine 5 mg once daily",
+            "gold": "continue amlodipine 5 mg once daily"
+          },
+          {
+            "predicted": "add losartan 25 mg once daily",
+            "gold": "add losartan 25 mg once daily"
+          },
+          {
+            "predicted": "stop naproxen",
+            "gold": "stop naproxen"
+          },
+          {
+            "predicted": "use acetaminophen 650 mg up to four times a day for back pain",
+            "gold": "use acetaminophen 650 mg up to four times a day for back pain"
+          },
+          {
+            "predicted": "low-salt diet under 2 grams a day",
+            "gold": "low-salt diet under 2 grams a day"
+          },
+          {
+            "predicted": "30 minutes of walking five days a week",
+            "gold": "30 minutes of walking five days a week"
+          },
+          {
+            "predicted": "home BP log twice a day",
+            "gold": "home BP log twice a day"
+          },
+          {
+            "predicted": "basic metabolic panel before next visit",
+            "gold": "basic metabolic panel before next visit"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_016"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "hypertension follow-up with elevated blood pressure",
+          "vitals": {
+            "bp": "152/96",
+            "hr": 84,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "amlodipine",
+              "dose": "5 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            },
+            {
+              "name": "losartan",
+              "dose": "25 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            },
+            {
+              "name": "acetaminophen",
+              "dose": "650 mg",
+              "frequency": "up to four times a day as needed",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "uncontrolled essential hypertension",
+              "icd10": "I10"
+            }
+          ],
+          "plan": [
+            "continue amlodipine 5 mg once daily",
+            "add losartan 25 mg once daily",
+            "stop naproxen",
+            "use acetaminophen 650 mg up to four times a day for back pain",
+            "low-salt diet under 2 grams a day",
+            "30 minutes of walking five days a week",
+            "home BP log twice a day",
+            "basic metabolic panel before next visit"
+          ],
+          "follow_up": {
+            "interval_days": 28,
+            "reason": "blood pressure recheck"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person]\r\n[Vitals: BP 152/96, HR 84]\r\n\r\nDoctor: Hi Howard, your blood pressure today is 152 over 96. That's still elevated.\r\nPatient: I've been taking the amlodipine.\r\nDoctor: Yes, 5 mg once daily, right? Any swelling in your ankles?\r\nPatient: A little, especially at the end of the day.\r\nDoctor: Okay. Let's add a low-dose ARB. Start losartan 25 mg once daily. We'll keep amlodipine the same for now.\r\nPatient: Will I need to stop my naproxen for my back?\r\nDoctor: Yes, NSAIDs can raise BP. Try acetaminophen instead — 650 mg up to four times a day as needed.\r\nPatient: Okay.\r\nDoctor: Cut back on salt — under 2 grams a day — and aim for 30 minutes of walking five days a week. Get a home BP cuff if you don't have one and log readings twice a day.\r\nPatient: Will do.\r\nDoctor: Come back in 4 weeks for a recheck. We'll get a basic metabolic panel beforehand to check kidney function on the losartan.\r\n",
+  "gold": {
+    "chief_complaint": "hypertension follow-up with elevated blood pressure",
+    "vitals": {
+      "bp": "152/96",
+      "hr": 84,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "amlodipine",
+        "dose": "5 mg",
+        "frequency": "once daily",
+        "route": "PO"
+      },
+      {
+        "name": "losartan",
+        "dose": "25 mg",
+        "frequency": "once daily",
+        "route": "PO"
+      },
+      {
+        "name": "acetaminophen",
+        "dose": "650 mg",
+        "frequency": "up to four times a day as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "uncontrolled essential hypertension",
+        "icd10": "I10"
+      }
+    ],
+    "plan": [
+      "continue amlodipine 5 mg once daily",
+      "add losartan 25 mg once daily",
+      "stop naproxen",
+      "use acetaminophen 650 mg up to four times a day for back pain",
+      "low-salt diet under 2 grams a day",
+      "30 minutes of walking five days a week",
+      "home BP log twice a day",
+      "basic metabolic panel before next visit"
+    ],
+    "follow_up": {
+      "interval_days": 28,
+      "reason": "blood pressure recheck"
+    }
+  },
+  "completedAt": "2026-05-01T10:06:43.668Z"
+}

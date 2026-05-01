@@ -1,0 +1,196 @@
+{
+  "transcriptId": "case_020",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "metabolic syndrome counseling",
+    "vitals": {
+      "bp": "138/88",
+      "hr": 78,
+      "temp_f": 98.4,
+      "spo2": 98
+    },
+    "medications": [],
+    "diagnoses": [
+      {
+        "description": "metabolic syndrome",
+        "icd10": "E88.81"
+      }
+    ],
+    "plan": [
+      "lose 7 to 10% of body weight over 6 months",
+      "plate method: half vegetables, quarter lean protein, quarter complex carbs",
+      "cut sugary drinks",
+      "150 minutes moderate cardio plus 2 days strength training weekly",
+      "dietitian referral",
+      "repeat fasting glucose, lipid panel, and A1c in 3 months"
+    ],
+    "follow_up": {
+      "interval_days": 90,
+      "reason": "metabolic syndrome lifestyle recheck"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "plan[0]",
+        "value": "lose 7 to 10% of body weight over 6 months",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[4]",
+        "value": "dietitian referral",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "90",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "metabolic syndrome lifestyle recheck",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": []
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "lose 7 to 10% of body weight over 6 months",
+            "gold": "lose 7 to 10% of body weight over 6 months"
+          },
+          {
+            "predicted": "plate method: half vegetables, quarter lean protein, quarter complex carbs",
+            "gold": "plate method: half vegetables, quarter lean protein, quarter complex carbs"
+          },
+          {
+            "predicted": "cut sugary drinks",
+            "gold": "cut sugary drinks"
+          },
+          {
+            "predicted": "150 minutes moderate cardio plus 2 days strength training weekly",
+            "gold": "150 minutes moderate cardio plus 2 days strength training weekly"
+          },
+          {
+            "predicted": "dietitian referral",
+            "gold": "dietitian referral"
+          },
+          {
+            "predicted": "repeat fasting glucose, lipid panel, and A1c in 3 months",
+            "gold": "repeat fasting glucose, lipid panel, and A1c in 3 months"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "cot",
+        "transcriptId": "case_020"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "metabolic syndrome counseling",
+          "vitals": {
+            "bp": "138/88",
+            "hr": 78,
+            "temp_f": 98.4,
+            "spo2": 98
+          },
+          "medications": [],
+          "diagnoses": [
+            {
+              "description": "metabolic syndrome",
+              "icd10": "E88.81"
+            }
+          ],
+          "plan": [
+            "lose 7 to 10% of body weight over 6 months",
+            "plate method: half vegetables, quarter lean protein, quarter complex carbs",
+            "cut sugary drinks",
+            "150 minutes moderate cardio plus 2 days strength training weekly",
+            "dietitian referral",
+            "repeat fasting glucose, lipid panel, and A1c in 3 months"
+          ],
+          "follow_up": {
+            "interval_days": 90,
+            "reason": "metabolic syndrome lifestyle recheck"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "dd25af3e1241b9e2",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person counseling]\r\n[Vitals: BP 138/88, HR 78, Temp 98.4, SpO2 98%]\r\n\r\nDoctor: Hi Karen. Let's review where you stand. Your waist circumference is 38 inches, BMI 32, fasting glucose 108, triglycerides 180, HDL 38, BP 138/88. That's metabolic syndrome.\r\nPatient: I figured.\r\nDoctor: The good news: you're early. Let's avoid medications today and try 6 months of structured lifestyle change. Goal is to lose 7 to 10% of your body weight.\r\nPatient: How?\r\nDoctor: Plate method — half vegetables, quarter lean protein, quarter complex carbs. Cut sugary drinks. Aim for 150 minutes of moderate cardio plus 2 days of strength training each week. I'm referring you to our dietitian.\r\nPatient: Okay.\r\nDoctor: We'll repeat your fasting glucose, lipid panel, and A1c in 3 months. If things aren't moving I may add metformin. Come back in 3 months.\r\n",
+  "gold": {
+    "chief_complaint": "metabolic syndrome counseling",
+    "vitals": {
+      "bp": "138/88",
+      "hr": 78,
+      "temp_f": 98.4,
+      "spo2": 98
+    },
+    "medications": [],
+    "diagnoses": [
+      {
+        "description": "metabolic syndrome",
+        "icd10": "E88.81"
+      }
+    ],
+    "plan": [
+      "lose 7 to 10% of body weight over 6 months",
+      "plate method: half vegetables, quarter lean protein, quarter complex carbs",
+      "cut sugary drinks",
+      "150 minutes moderate cardio plus 2 days strength training weekly",
+      "dietitian referral",
+      "repeat fasting glucose, lipid panel, and A1c in 3 months"
+    ],
+    "follow_up": {
+      "interval_days": 90,
+      "reason": "metabolic syndrome lifestyle recheck"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:21.952Z"
+}

@@ -1,0 +1,220 @@
+{
+  "transcriptId": "case_023",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "right shoulder pain with overhead activity",
+    "vitals": {
+      "bp": "122/78",
+      "hr": 78,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "naproxen",
+        "dose": "500 mg",
+        "frequency": "twice daily with food",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "rotator cuff impingement, supraspinatus tendinopathy",
+        "icd10": "M75.41"
+      }
+    ],
+    "plan": [
+      "naproxen 500 mg twice daily with food for two weeks",
+      "rest from overhead activity",
+      "physical therapy referral for rotator cuff strengthening and posture work",
+      "ice 15 to 20 minutes a few times a day",
+      "consider subacromial corticosteroid injection if not improving in 6 weeks"
+    ],
+    "follow_up": {
+      "interval_days": 42,
+      "reason": "shoulder impingement recheck"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "plan[2]",
+        "value": "physical therapy referral for rotator cuff strengthening and posture work",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "42",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "shoulder impingement recheck",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "naproxen",
+              "dose": "500 mg",
+              "frequency": "twice daily with food",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "naproxen",
+              "dose": "500 mg",
+              "frequency": "twice daily with food",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "naproxen 500 mg twice daily with food for two weeks",
+            "gold": "naproxen 500 mg twice daily with food for two weeks"
+          },
+          {
+            "predicted": "rest from overhead activity",
+            "gold": "rest from overhead activity"
+          },
+          {
+            "predicted": "physical therapy referral for rotator cuff strengthening and posture work",
+            "gold": "physical therapy referral for rotator cuff strengthening and posture work"
+          },
+          {
+            "predicted": "ice 15 to 20 minutes a few times a day",
+            "gold": "ice 15 to 20 minutes a few times a day"
+          },
+          {
+            "predicted": "consider subacromial corticosteroid injection if not improving in 6 weeks",
+            "gold": "consider subacromial corticosteroid injection if not improving in 6 weeks"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "cot",
+        "transcriptId": "case_023"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "right shoulder pain with overhead activity",
+          "vitals": {
+            "bp": "122/78",
+            "hr": 78,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "naproxen",
+              "dose": "500 mg",
+              "frequency": "twice daily with food",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "rotator cuff impingement, supraspinatus tendinopathy",
+              "icd10": "M75.41"
+            }
+          ],
+          "plan": [
+            "naproxen 500 mg twice daily with food for two weeks",
+            "rest from overhead activity",
+            "physical therapy referral for rotator cuff strengthening and posture work",
+            "ice 15 to 20 minutes a few times a day",
+            "consider subacromial corticosteroid injection if not improving in 6 weeks"
+          ],
+          "follow_up": {
+            "interval_days": 42,
+            "reason": "shoulder impingement recheck"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "dd25af3e1241b9e2",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person]\r\n[Vitals: BP 122/78, HR 78]\r\n\r\nDoctor: Hi Naomi, what's going on with the shoulder?\r\nPatient: Right shoulder, pain when I reach overhead or behind my back. It hurts at night when I sleep on it. Started a couple weeks after I started a painting project at home.\r\nDoctor: Any numbness or weakness in the arm?\r\nPatient: No.\r\nDoctor: Painful arc between 60 and 120 degrees of abduction, positive Hawkins-Kennedy and Neer signs, no significant weakness. This is rotator cuff impingement, likely supraspinatus tendinopathy.\r\nPatient: What now?\r\nDoctor: Naproxen 500 mg twice daily with food for two weeks. Rest from overhead activity. I'll refer you to physical therapy for rotator cuff strengthening and posture work.\r\nPatient: Should I ice it?\r\nDoctor: Yes, ice 15 to 20 minutes a few times a day. If you're not improving in 6 weeks of PT, we'll consider a subacromial corticosteroid injection. Follow up in 6 weeks.\r\n",
+  "gold": {
+    "chief_complaint": "right shoulder pain with overhead activity",
+    "vitals": {
+      "bp": "122/78",
+      "hr": 78,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "naproxen",
+        "dose": "500 mg",
+        "frequency": "twice daily with food",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "rotator cuff impingement, supraspinatus tendinopathy",
+        "icd10": "M75.41"
+      }
+    ],
+    "plan": [
+      "naproxen 500 mg twice daily with food for two weeks",
+      "rest from overhead activity",
+      "physical therapy referral for rotator cuff strengthening and posture work",
+      "ice 15 to 20 minutes a few times a day",
+      "consider subacromial corticosteroid injection if not improving in 6 weeks"
+    ],
+    "follow_up": {
+      "interval_days": 42,
+      "reason": "shoulder impingement recheck"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:22.476Z"
+}

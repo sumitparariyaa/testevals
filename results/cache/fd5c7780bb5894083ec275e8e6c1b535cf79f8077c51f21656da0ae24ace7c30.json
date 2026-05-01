@@ -1,0 +1,230 @@
+{
+  "transcriptId": "case_009",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "nausea, vomiting, and diarrhea since yesterday",
+    "vitals": {
+      "bp": "110/68",
+      "hr": 96,
+      "temp_f": 100.2,
+      "spo2": 99
+    },
+    "medications": [
+      {
+        "name": "ondansetron",
+        "dose": "4 mg",
+        "frequency": "every 8 hours as needed",
+        "route": "SL"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "acute gastroenteritis",
+        "icd10": "K52.9"
+      }
+    ],
+    "plan": [
+      "ondansetron 4 mg sublingual every 8 hours as needed for nausea",
+      "oral rehydration solution sipped slowly",
+      "BRAT diet as tolerated",
+      "avoid dairy for 48 hours",
+      "go to urgent care if cannot keep fluids down past 12 more hours, bloody stools, or severe pain"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "urgent care if symptoms worsen"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "plan[0]",
+        "value": "ondansetron 4 mg sublingual every 8 hours as needed for nausea",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[1]",
+        "value": "oral rehydration solution sipped slowly",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[2]",
+        "value": "BRAT diet as tolerated",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[4]",
+        "value": "go to urgent care if cannot keep fluids down past 12 more hours, bloody stools, or severe pain",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "urgent care if symptoms worsen",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "ondansetron",
+              "dose": "4 mg",
+              "frequency": "every 8 hours as needed",
+              "route": "SL"
+            },
+            "gold": {
+              "name": "ondansetron",
+              "dose": "4 mg",
+              "frequency": "every 8 hours as needed",
+              "route": "SL"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "ondansetron 4 mg sublingual every 8 hours as needed for nausea",
+            "gold": "ondansetron 4 mg sublingual every 8 hours as needed for nausea"
+          },
+          {
+            "predicted": "oral rehydration solution sipped slowly",
+            "gold": "oral rehydration solution sipped slowly"
+          },
+          {
+            "predicted": "BRAT diet as tolerated",
+            "gold": "BRAT diet as tolerated"
+          },
+          {
+            "predicted": "avoid dairy for 48 hours",
+            "gold": "avoid dairy for 48 hours"
+          },
+          {
+            "predicted": "go to urgent care if cannot keep fluids down past 12 more hours, bloody stools, or severe pain",
+            "gold": "go to urgent care if cannot keep fluids down past 12 more hours, bloody stools, or severe pain"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "few_shot",
+        "transcriptId": "case_009"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "nausea, vomiting, and diarrhea since yesterday",
+          "vitals": {
+            "bp": "110/68",
+            "hr": 96,
+            "temp_f": 100.2,
+            "spo2": 99
+          },
+          "medications": [
+            {
+              "name": "ondansetron",
+              "dose": "4 mg",
+              "frequency": "every 8 hours as needed",
+              "route": "SL"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "acute gastroenteritis",
+              "icd10": "K52.9"
+            }
+          ],
+          "plan": [
+            "ondansetron 4 mg sublingual every 8 hours as needed for nausea",
+            "oral rehydration solution sipped slowly",
+            "BRAT diet as tolerated",
+            "avoid dairy for 48 hours",
+            "go to urgent care if cannot keep fluids down past 12 more hours, bloody stools, or severe pain"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": "urgent care if symptoms worsen"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "0104e919dec297ce",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: in-person]\r\n[Vitals: BP 110/68, HR 96, Temp 100.2, SpO2 99%]\r\n\r\nDoctor: Hi Lily, what's been going on?\r\nPatient: Nausea, vomiting, and diarrhea since yesterday afternoon. I think I had bad sushi.\r\nDoctor: How many episodes?\r\nPatient: Maybe six bouts of diarrhea, three of vomiting. I haven't been able to keep water down well.\r\nDoctor: Any blood, severe abdominal pain, or recent travel?\r\nPatient: No blood, mild crampy pain, no travel.\r\nDoctor: Mucous membranes are slightly dry, abdomen soft with mild diffuse tenderness, no rebound. This is acute viral or food-borne gastroenteritis. We'll treat conservatively. I'm giving you ondansetron 4 mg, dissolve under your tongue every 8 hours as needed for nausea. Use oral rehydration solution — sip slowly. BRAT diet as you tolerate. Avoid dairy for 48 hours.\r\nPatient: Okay.\r\nDoctor: If you can't keep fluids down for more than 12 more hours, develop bloody stools, or get severe abdominal pain, head to urgent care for IV fluids.\r\n",
+  "gold": {
+    "chief_complaint": "nausea, vomiting, and diarrhea since yesterday",
+    "vitals": {
+      "bp": "110/68",
+      "hr": 96,
+      "temp_f": 100.2,
+      "spo2": 99
+    },
+    "medications": [
+      {
+        "name": "ondansetron",
+        "dose": "4 mg",
+        "frequency": "every 8 hours as needed",
+        "route": "SL"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "acute gastroenteritis",
+        "icd10": "K52.9"
+      }
+    ],
+    "plan": [
+      "ondansetron 4 mg sublingual every 8 hours as needed for nausea",
+      "oral rehydration solution sipped slowly",
+      "BRAT diet as tolerated",
+      "avoid dairy for 48 hours",
+      "go to urgent care if cannot keep fluids down past 12 more hours, bloody stools, or severe pain"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "urgent care if symptoms worsen"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:09.731Z"
+}

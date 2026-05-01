@@ -1,0 +1,213 @@
+{
+  "transcriptId": "case_038",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "contraception counseling for long-acting method",
+    "vitals": {
+      "bp": "116/72",
+      "hr": 68,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "ibuprofen",
+        "dose": "600 mg",
+        "frequency": "one hour before appointment",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "encounter for contraception counseling",
+        "icd10": "Z30.09"
+      }
+    ],
+    "plan": [
+      "schedule hormonal IUD placement in 2 weeks",
+      "ibuprofen 600 mg one hour before the appointment",
+      "negative pregnancy test the day of insertion",
+      "continue current pill until placement"
+    ],
+    "follow_up": {
+      "interval_days": 14,
+      "reason": "IUD placement procedure visit"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "contraception counseling for long-acting method",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "encounter for contraception counseling",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "14",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "one hour before appointment",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "one hour before appointment",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "schedule hormonal IUD placement in 2 weeks",
+            "gold": "schedule hormonal IUD placement in 2 weeks"
+          },
+          {
+            "predicted": "ibuprofen 600 mg one hour before the appointment",
+            "gold": "ibuprofen 600 mg one hour before the appointment"
+          },
+          {
+            "predicted": "negative pregnancy test the day of insertion",
+            "gold": "negative pregnancy test the day of insertion"
+          },
+          {
+            "predicted": "continue current pill until placement",
+            "gold": "continue current pill until placement"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "few_shot",
+        "transcriptId": "case_038"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "contraception counseling for long-acting method",
+          "vitals": {
+            "bp": "116/72",
+            "hr": 68,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "one hour before appointment",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "encounter for contraception counseling",
+              "icd10": "Z30.09"
+            }
+          ],
+          "plan": [
+            "schedule hormonal IUD placement in 2 weeks",
+            "ibuprofen 600 mg one hour before the appointment",
+            "negative pregnancy test the day of insertion",
+            "continue current pill until placement"
+          ],
+          "follow_up": {
+            "interval_days": 14,
+            "reason": "IUD placement procedure visit"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "0104e919dec297ce",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 4,
+  "transcript": "[Visit type: in-person, contraception counseling]\r\n[Vitals: BP 116/72, HR 68]\r\n\r\nDoctor: Hi Rachel. You're here to talk contraception?\r\nPatient: Yeah. I've been on the pill for years but I keep forgetting it. I want something I don't have to think about.\r\nDoctor: Any plans for pregnancy in the next few years?\r\nPatient: No, not for at least 5.\r\nDoctor: Long-acting reversible options would be ideal — IUD or implant. The hormonal IUD lasts 5 to 8 years, very effective, often makes periods lighter. The copper IUD is hormone-free, lasts up to 10 years, can make periods heavier. The implant lasts 3 years.\r\nPatient: I think the hormonal IUD sounds best.\r\nDoctor: Good choice. Let's plan for placement at our procedure visit. Take ibuprofen 600 mg one hour before the appointment for cramping.\r\nPatient: Anything else?\r\nDoctor: Negative pregnancy test the day of insertion. Continue current pill until then. We'll schedule placement in 2 weeks.\r\nPatient: Thanks.\r\n",
+  "gold": {
+    "chief_complaint": "contraception counseling for long-acting method",
+    "vitals": {
+      "bp": "116/72",
+      "hr": 68,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "ibuprofen",
+        "dose": "600 mg",
+        "frequency": "one hour before appointment",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "encounter for contraception counseling",
+        "icd10": "Z30.09"
+      }
+    ],
+    "plan": [
+      "schedule hormonal IUD placement in 2 weeks",
+      "ibuprofen 600 mg one hour before the appointment",
+      "negative pregnancy test the day of insertion",
+      "continue current pill until placement"
+    ],
+    "follow_up": {
+      "interval_days": 14,
+      "reason": "IUD placement procedure visit"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:14.093Z"
+}

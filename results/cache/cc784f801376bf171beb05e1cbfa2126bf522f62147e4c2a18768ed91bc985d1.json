@@ -1,0 +1,238 @@
+{
+  "transcriptId": "case_005",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "right ear pain and fever in toddler",
+    "vitals": {
+      "bp": null,
+      "hr": 118,
+      "temp_f": 102.6,
+      "spo2": 99
+    },
+    "medications": [
+      {
+        "name": "amoxicillin",
+        "dose": "400 mg",
+        "frequency": "twice a day",
+        "route": "PO"
+      },
+      {
+        "name": "children's ibuprofen",
+        "dose": "5 mL",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "acute otitis media, right ear",
+        "icd10": "H66.91"
+      }
+    ],
+    "plan": [
+      "amoxicillin 400 mg by mouth twice a day for 10 days",
+      "children's ibuprofen 5 mL every 6 hours as needed for pain and fever",
+      "return in 48 to 72 hours if not improving or worsening"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "return if not improving in 48 to 72 hours"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "right ear pain and fever in toddler",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[2]",
+        "value": "return in 48 to 72 hours if not improving or worsening",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "return if not improving in 48 to 72 hours",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "amoxicillin",
+              "dose": "400 mg",
+              "frequency": "twice a day",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "amoxicillin",
+              "dose": "400 mg",
+              "frequency": "twice a day",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "children's ibuprofen",
+              "dose": "5 mL",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "children's ibuprofen",
+              "dose": "5 mL",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "amoxicillin 400 mg by mouth twice a day for 10 days",
+            "gold": "amoxicillin 400 mg by mouth twice a day for 10 days"
+          },
+          {
+            "predicted": "children's ibuprofen 5 mL every 6 hours as needed for pain and fever",
+            "gold": "children's ibuprofen 5 mL every 6 hours as needed for pain and fever"
+          },
+          {
+            "predicted": "return in 48 to 72 hours if not improving or worsening",
+            "gold": "return in 48 to 72 hours if not improving or worsening"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_005"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "right ear pain and fever in toddler",
+          "vitals": {
+            "bp": null,
+            "hr": 118,
+            "temp_f": 102.6,
+            "spo2": 99
+          },
+          "medications": [
+            {
+              "name": "amoxicillin",
+              "dose": "400 mg",
+              "frequency": "twice a day",
+              "route": "PO"
+            },
+            {
+              "name": "children's ibuprofen",
+              "dose": "5 mL",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "acute otitis media, right ear",
+              "icd10": "H66.91"
+            }
+          ],
+          "plan": [
+            "amoxicillin 400 mg by mouth twice a day for 10 days",
+            "children's ibuprofen 5 mL every 6 hours as needed for pain and fever",
+            "return in 48 to 72 hours if not improving or worsening"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": "return if not improving in 48 to 72 hours"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: in-person, pediatric mom-and-child]\r\n[Vitals: HR 118, Temp 102.6, SpO2 99%]\r\n\r\nDoctor: Hi, what's been going on with Mateo?\r\nPatient (mom): He's been pulling at his right ear since yesterday and was up most of the night crying. He had a runny nose last week.\r\nDoctor: Any drainage from the ear?\r\nPatient: No.\r\nDoctor: Let me look. Right tympanic membrane is bulging and red, no perforation. Left ear is fine. He's got a clear acute otitis media on the right.\r\nPatient: Does he need antibiotics?\r\nDoctor: At his age and with that fever of 102.6, yes. Amoxicillin 400 mg by mouth twice a day for 10 days. Also give him children's ibuprofen, weight-based dosing — 5 mL every 6 hours as needed for pain and fever.\r\nPatient: Okay.\r\nDoctor: If he's not better in 48 to 72 hours or it gets worse, bring him back. Otherwise no follow-up needed.\r\n",
+  "gold": {
+    "chief_complaint": "right ear pain and fever in toddler",
+    "vitals": {
+      "bp": null,
+      "hr": 118,
+      "temp_f": 102.6,
+      "spo2": 99
+    },
+    "medications": [
+      {
+        "name": "amoxicillin",
+        "dose": "400 mg",
+        "frequency": "twice a day",
+        "route": "PO"
+      },
+      {
+        "name": "children's ibuprofen",
+        "dose": "5 mL",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "acute otitis media, right ear",
+        "icd10": "H66.91"
+      }
+    ],
+    "plan": [
+      "amoxicillin 400 mg by mouth twice a day for 10 days",
+      "children's ibuprofen 5 mL every 6 hours as needed for pain and fever",
+      "return in 48 to 72 hours if not improving or worsening"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "return if not improving in 48 to 72 hours"
+    }
+  },
+  "completedAt": "2026-05-01T10:06:41.817Z"
+}

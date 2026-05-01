@@ -1,0 +1,241 @@
+{
+  "transcriptId": "case_044",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "weight management with prediabetes",
+    "vitals": {
+      "bp": "132/84",
+      "hr": 78,
+      "temp_f": 98.4,
+      "spo2": 98
+    },
+    "medications": [
+      {
+        "name": "semaglutide",
+        "dose": "0.25 mg",
+        "frequency": "once a week",
+        "route": "subcutaneous"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "obesity",
+        "icd10": "E66.9"
+      },
+      {
+        "description": "prediabetes",
+        "icd10": "R73.03"
+      }
+    ],
+    "plan": [
+      "start semaglutide 0.25 mg subcutaneous once a week for 4 weeks then titrate",
+      "stop and call for severe abdominal pain",
+      "calorie-reduced, high-protein eating pattern",
+      "150 minutes moderate exercise weekly",
+      "food and activity logs",
+      "dietitian referral",
+      "repeat A1c and metabolic panel in 3 months"
+    ],
+    "follow_up": {
+      "interval_days": 28,
+      "reason": "tolerability check and semaglutide dose increase"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "diagnoses[0].description",
+        "value": "obesity",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "28",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "semaglutide",
+              "dose": "0.25 mg",
+              "frequency": "once a week",
+              "route": "subcutaneous"
+            },
+            "gold": {
+              "name": "semaglutide",
+              "dose": "0.25 mg",
+              "frequency": "once a week",
+              "route": "subcutaneous"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "start semaglutide 0.25 mg subcutaneous once a week for 4 weeks then titrate",
+            "gold": "start semaglutide 0.25 mg subcutaneous once a week for 4 weeks then titrate"
+          },
+          {
+            "predicted": "stop and call for severe abdominal pain",
+            "gold": "stop and call for severe abdominal pain"
+          },
+          {
+            "predicted": "calorie-reduced, high-protein eating pattern",
+            "gold": "calorie-reduced, high-protein eating pattern"
+          },
+          {
+            "predicted": "150 minutes moderate exercise weekly",
+            "gold": "150 minutes moderate exercise weekly"
+          },
+          {
+            "predicted": "food and activity logs",
+            "gold": "food and activity logs"
+          },
+          {
+            "predicted": "dietitian referral",
+            "gold": "dietitian referral"
+          },
+          {
+            "predicted": "repeat A1c and metabolic panel in 3 months",
+            "gold": "repeat A1c and metabolic panel in 3 months"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "cot",
+        "transcriptId": "case_044"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "weight management with prediabetes",
+          "vitals": {
+            "bp": "132/84",
+            "hr": 78,
+            "temp_f": 98.4,
+            "spo2": 98
+          },
+          "medications": [
+            {
+              "name": "semaglutide",
+              "dose": "0.25 mg",
+              "frequency": "once a week",
+              "route": "subcutaneous"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "obesity",
+              "icd10": "E66.9"
+            },
+            {
+              "description": "prediabetes",
+              "icd10": "R73.03"
+            }
+          ],
+          "plan": [
+            "start semaglutide 0.25 mg subcutaneous once a week for 4 weeks then titrate",
+            "stop and call for severe abdominal pain",
+            "calorie-reduced, high-protein eating pattern",
+            "150 minutes moderate exercise weekly",
+            "food and activity logs",
+            "dietitian referral",
+            "repeat A1c and metabolic panel in 3 months"
+          ],
+          "follow_up": {
+            "interval_days": 28,
+            "reason": "tolerability check and semaglutide dose increase"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "dd25af3e1241b9e2",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: in-person, weight management]\r\n[Vitals: BP 132/84, HR 78, Temp 98.4, SpO2 98%]\r\n\r\nDoctor: Hi Linda. You've been working on weight management — how are things?\r\nPatient: I've gained 10 pounds in the last 18 months. BMI is 33 now. I've tried diets but they don't stick.\r\nDoctor: Comorbidities — your A1c is 5.9, prediabetes range. BP is borderline today.\r\nPatient: I know.\r\nDoctor: With your BMI and prediabetes, you'd qualify for a GLP-1 agonist. I'd like to start semaglutide 0.25 mg subcutaneously once a week for 4 weeks, then we'll titrate up. Common side effects: nausea, mild GI upset, especially in the first weeks. Stop it and call us if you ever have severe abdominal pain.\r\nPatient: Okay.\r\nDoctor: Combine it with a calorie-reduced, high-protein eating pattern, 150 minutes of moderate exercise weekly, and food/activity logs. Dietitian referral.\r\nPatient: Got it.\r\nDoctor: Recheck in 4 weeks for tolerability and dose increase. We'll repeat A1c and metabolic panel in 3 months.\r\n",
+  "gold": {
+    "chief_complaint": "weight management with prediabetes",
+    "vitals": {
+      "bp": "132/84",
+      "hr": 78,
+      "temp_f": 98.4,
+      "spo2": 98
+    },
+    "medications": [
+      {
+        "name": "semaglutide",
+        "dose": "0.25 mg",
+        "frequency": "once a week",
+        "route": "subcutaneous"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "obesity",
+        "icd10": "E66.9"
+      },
+      {
+        "description": "prediabetes",
+        "icd10": "R73.03"
+      }
+    ],
+    "plan": [
+      "start semaglutide 0.25 mg subcutaneous once a week for 4 weeks then titrate",
+      "stop and call for severe abdominal pain",
+      "calorie-reduced, high-protein eating pattern",
+      "150 minutes moderate exercise weekly",
+      "food and activity logs",
+      "dietitian referral",
+      "repeat A1c and metabolic panel in 3 months"
+    ],
+    "follow_up": {
+      "interval_days": 28,
+      "reason": "tolerability check and semaglutide dose increase"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:26.704Z"
+}

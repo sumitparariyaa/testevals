@@ -1,0 +1,265 @@
+{
+  "transcriptId": "case_012",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "IBS flare with bloating, alternating bowel habits, and crampy pain",
+    "vitals": {
+      "bp": "116/72",
+      "hr": 80,
+      "temp_f": 98.4,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "dicyclomine",
+        "dose": "10 mg",
+        "frequency": "three times daily before meals",
+        "route": "PO"
+      },
+      {
+        "name": "simethicone",
+        "dose": "125 mg",
+        "frequency": "with meals as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "irritable bowel syndrome, mixed type",
+        "icd10": "K58.0"
+      }
+    ],
+    "plan": [
+      "low-FODMAP diet trial for 4 to 6 weeks",
+      "dicyclomine 10 mg three times daily before meals for cramping",
+      "simethicone 125 mg with meals as needed for bloating",
+      "stress management with mindfulness or 20 minutes of walking daily"
+    ],
+    "follow_up": {
+      "interval_days": 42,
+      "reason": "IBS diet trial recheck"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "IBS flare with bloating, alternating bowel habits, and crampy pain",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[1].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "irritable bowel syndrome, mixed type",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[3]",
+        "value": "stress management with mindfulness or 20 minutes of walking daily",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "42",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "IBS diet trial recheck",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "dicyclomine",
+              "dose": "10 mg",
+              "frequency": "three times daily before meals",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "dicyclomine",
+              "dose": "10 mg",
+              "frequency": "three times daily before meals",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "simethicone",
+              "dose": "125 mg",
+              "frequency": "with meals as needed",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "simethicone",
+              "dose": "125 mg",
+              "frequency": "with meals as needed",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "low-FODMAP diet trial for 4 to 6 weeks",
+            "gold": "low-FODMAP diet trial for 4 to 6 weeks"
+          },
+          {
+            "predicted": "dicyclomine 10 mg three times daily before meals for cramping",
+            "gold": "dicyclomine 10 mg three times daily before meals for cramping"
+          },
+          {
+            "predicted": "simethicone 125 mg with meals as needed for bloating",
+            "gold": "simethicone 125 mg with meals as needed for bloating"
+          },
+          {
+            "predicted": "stress management with mindfulness or 20 minutes of walking daily",
+            "gold": "stress management with mindfulness or 20 minutes of walking daily"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_012"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "IBS flare with bloating, alternating bowel habits, and crampy pain",
+          "vitals": {
+            "bp": "116/72",
+            "hr": 80,
+            "temp_f": 98.4,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "dicyclomine",
+              "dose": "10 mg",
+              "frequency": "three times daily before meals",
+              "route": "PO"
+            },
+            {
+              "name": "simethicone",
+              "dose": "125 mg",
+              "frequency": "with meals as needed",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "irritable bowel syndrome, mixed type",
+              "icd10": "K58.0"
+            }
+          ],
+          "plan": [
+            "low-FODMAP diet trial for 4 to 6 weeks",
+            "dicyclomine 10 mg three times daily before meals for cramping",
+            "simethicone 125 mg with meals as needed for bloating",
+            "stress management with mindfulness or 20 minutes of walking daily"
+          ],
+          "follow_up": {
+            "interval_days": 42,
+            "reason": "IBS diet trial recheck"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: in-person]\r\n[Vitals: BP 116/72, HR 80, Temp 98.4]\r\n\r\nDoctor: Hi Tara. Tell me about your stomach.\r\nPatient: I've had IBS for years but the last three weeks have been a flare. Bloating, alternating diarrhea and constipation, and these crampy pains that get better after I go.\r\nDoctor: Anything new in your diet or stress?\r\nPatient: I started a new job. Lots of takeout and stress.\r\nDoctor: Classic flare. Let's manage it. I'd like you to try a low-FODMAP diet for 4 to 6 weeks — I'll send you resources. For the cramping, dicyclomine 10 mg three times daily before meals. For the bloating you can use simethicone 125 mg with meals as needed. And let's address the stress — try mindfulness or 20 minutes of walking daily.\r\nPatient: Okay.\r\nDoctor: Come back in 6 weeks to see how the diet trial went and whether we need to do further workup.\r\n",
+  "gold": {
+    "chief_complaint": "IBS flare with bloating, alternating bowel habits, and crampy pain",
+    "vitals": {
+      "bp": "116/72",
+      "hr": 80,
+      "temp_f": 98.4,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "dicyclomine",
+        "dose": "10 mg",
+        "frequency": "three times daily before meals",
+        "route": "PO"
+      },
+      {
+        "name": "simethicone",
+        "dose": "125 mg",
+        "frequency": "with meals as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "irritable bowel syndrome, mixed type",
+        "icd10": "K58.0"
+      }
+    ],
+    "plan": [
+      "low-FODMAP diet trial for 4 to 6 weeks",
+      "dicyclomine 10 mg three times daily before meals for cramping",
+      "simethicone 125 mg with meals as needed for bloating",
+      "stress management with mindfulness or 20 minutes of walking daily"
+    ],
+    "follow_up": {
+      "interval_days": 42,
+      "reason": "IBS diet trial recheck"
+    }
+  },
+  "completedAt": "2026-05-01T10:06:43.036Z"
+}

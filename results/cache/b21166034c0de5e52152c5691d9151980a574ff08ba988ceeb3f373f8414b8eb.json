@@ -1,0 +1,243 @@
+{
+  "transcriptId": "case_004",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "persistent cough for three weeks after a cold",
+    "vitals": {
+      "bp": "124/80",
+      "hr": 92,
+      "temp_f": 99.8,
+      "spo2": 95
+    },
+    "medications": [
+      {
+        "name": "albuterol",
+        "dose": "two puffs",
+        "frequency": "every 4 to 6 hours as needed",
+        "route": "inhaled"
+      },
+      {
+        "name": "benzonatate",
+        "dose": "100 mg",
+        "frequency": "three times daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "post-viral acute bronchitis",
+        "icd10": "J20.9"
+      }
+    ],
+    "plan": [
+      "albuterol inhaler two puffs every 4 to 6 hours as needed",
+      "benzonatate 100 mg three times daily for cough suppression",
+      "return for chest X-ray if cough persists past four weeks or fevers develop"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "return if cough persists past four weeks or fevers develop"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "persistent cough for three weeks after a cold",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "inhaled",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[2]",
+        "value": "return for chest X-ray if cough persists past four weeks or fevers develop",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "return if cough persists past four weeks or fevers develop",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "albuterol",
+              "dose": "two puffs",
+              "frequency": "every 4 to 6 hours as needed",
+              "route": "inhaled"
+            },
+            "gold": {
+              "name": "albuterol",
+              "dose": "two puffs",
+              "frequency": "every 4 to 6 hours as needed",
+              "route": "inhaled"
+            }
+          },
+          {
+            "predicted": {
+              "name": "benzonatate",
+              "dose": "100 mg",
+              "frequency": "three times daily",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "benzonatate",
+              "dose": "100 mg",
+              "frequency": "three times daily",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "albuterol inhaler two puffs every 4 to 6 hours as needed",
+            "gold": "albuterol inhaler two puffs every 4 to 6 hours as needed"
+          },
+          {
+            "predicted": "benzonatate 100 mg three times daily for cough suppression",
+            "gold": "benzonatate 100 mg three times daily for cough suppression"
+          },
+          {
+            "predicted": "return for chest X-ray if cough persists past four weeks or fevers develop",
+            "gold": "return for chest X-ray if cough persists past four weeks or fevers develop"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_004"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "persistent cough for three weeks after a cold",
+          "vitals": {
+            "bp": "124/80",
+            "hr": 92,
+            "temp_f": 99.8,
+            "spo2": 95
+          },
+          "medications": [
+            {
+              "name": "albuterol",
+              "dose": "two puffs",
+              "frequency": "every 4 to 6 hours as needed",
+              "route": "inhaled"
+            },
+            {
+              "name": "benzonatate",
+              "dose": "100 mg",
+              "frequency": "three times daily",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "post-viral acute bronchitis",
+              "icd10": "J20.9"
+            }
+          ],
+          "plan": [
+            "albuterol inhaler two puffs every 4 to 6 hours as needed",
+            "benzonatate 100 mg three times daily for cough suppression",
+            "return for chest X-ray if cough persists past four weeks or fevers develop"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": "return if cough persists past four weeks or fevers develop"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person]\r\n[Vitals at intake: BP 124/80, HR 92, Temp 99.8, SpO2 95%]\r\n\r\nDoctor: Hello Sam, I hear you've had a cough for three weeks?\r\nPatient: Yeah. Started after a cold. The runny nose went away but this cough just won't quit. It's mostly dry, sometimes I bring up a little clear stuff.\r\nDoctor: Any wheezing? Shortness of breath when you walk up stairs?\r\nPatient: A little wheeze at night. Stairs are okay.\r\nDoctor: Lungs have some scattered wheezes but no crackles. SpO2 is 95, fine. This sounds like post-viral acute bronchitis with some bronchospasm. Antibiotics aren't indicated here. I'm going to give you an albuterol inhaler — two puffs every 4 to 6 hours as needed for wheeze and cough — and benzonatate 100 mg three times daily for cough suppression.\r\nPatient: Okay.\r\nDoctor: Should resolve over the next two weeks. If it lingers past four weeks total or you start having fevers, come back and we'll get a chest X-ray.\r\n",
+  "gold": {
+    "chief_complaint": "persistent cough for three weeks after a cold",
+    "vitals": {
+      "bp": "124/80",
+      "hr": 92,
+      "temp_f": 99.8,
+      "spo2": 95
+    },
+    "medications": [
+      {
+        "name": "albuterol",
+        "dose": "two puffs",
+        "frequency": "every 4 to 6 hours as needed",
+        "route": "inhaled"
+      },
+      {
+        "name": "benzonatate",
+        "dose": "100 mg",
+        "frequency": "three times daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "post-viral acute bronchitis",
+        "icd10": "J20.9"
+      }
+    ],
+    "plan": [
+      "albuterol inhaler two puffs every 4 to 6 hours as needed",
+      "benzonatate 100 mg three times daily for cough suppression",
+      "return for chest X-ray if cough persists past four weeks or fevers develop"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "return if cough persists past four weeks or fevers develop"
+    }
+  },
+  "completedAt": "2026-05-01T10:06:41.729Z"
+}

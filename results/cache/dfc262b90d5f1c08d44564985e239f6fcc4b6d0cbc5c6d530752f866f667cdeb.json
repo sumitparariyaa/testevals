@@ -1,0 +1,223 @@
+{
+  "transcriptId": "case_010",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "GERD follow-up",
+    "vitals": {
+      "bp": "132/86",
+      "hr": 78,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "omeprazole",
+        "dose": "20 mg",
+        "frequency": "once daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "gastroesophageal reflux disease",
+        "icd10": "K21.9"
+      }
+    ],
+    "plan": [
+      "continue omeprazole 20 mg once daily 30 minutes before breakfast",
+      "finish dinner at least three hours before bed",
+      "elevate head of bed",
+      "plan to taper off in 8 to 12 weeks if controlled"
+    ],
+    "follow_up": {
+      "interval_days": 90,
+      "reason": "GERD recheck and discuss tapering"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "GERD follow-up",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "gastroesophageal reflux disease",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "90",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "GERD recheck and discuss tapering",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "omeprazole",
+              "dose": "20 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "omeprazole",
+              "dose": "20 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "continue omeprazole 20 mg once daily 30 minutes before breakfast",
+            "gold": "continue omeprazole 20 mg once daily 30 minutes before breakfast"
+          },
+          {
+            "predicted": "finish dinner at least three hours before bed",
+            "gold": "finish dinner at least three hours before bed"
+          },
+          {
+            "predicted": "elevate head of bed",
+            "gold": "elevate head of bed"
+          },
+          {
+            "predicted": "plan to taper off in 8 to 12 weeks if controlled",
+            "gold": "plan to taper off in 8 to 12 weeks if controlled"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "few_shot",
+        "transcriptId": "case_010"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "GERD follow-up",
+          "vitals": {
+            "bp": "132/86",
+            "hr": 78,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "omeprazole",
+              "dose": "20 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "gastroesophageal reflux disease",
+              "icd10": "K21.9"
+            }
+          ],
+          "plan": [
+            "continue omeprazole 20 mg once daily 30 minutes before breakfast",
+            "finish dinner at least three hours before bed",
+            "elevate head of bed",
+            "plan to taper off in 8 to 12 weeks if controlled"
+          ],
+          "follow_up": {
+            "interval_days": 90,
+            "reason": "GERD recheck and discuss tapering"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "0104e919dec297ce",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: in-person follow-up]\r\n[Vitals: BP 132/86, HR 78]\r\n\r\nDoctor: Hi Robert, how have your reflux symptoms been?\r\nPatient: A lot better since I started the omeprazole. The burning after dinner is mostly gone. Still get some occasional regurgitation if I lie down too soon after eating.\r\nDoctor: Any trouble swallowing? Weight loss? Black stools?\r\nPatient: None of that.\r\nDoctor: Good. Let's continue omeprazole 20 mg once daily, take it 30 minutes before breakfast. Keep working on the lifestyle pieces — finish dinner at least three hours before bed, elevate the head of the bed, watch the late-night snacks.\r\nPatient: I've cut back on coffee and that helped too.\r\nDoctor: Excellent. Plan to taper off in 8 to 12 weeks if symptoms stay controlled.\r\nPatient: Sounds good.\r\nDoctor: Come back in 3 months for a recheck and we'll discuss tapering.\r\n",
+  "gold": {
+    "chief_complaint": "GERD follow-up",
+    "vitals": {
+      "bp": "132/86",
+      "hr": 78,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "omeprazole",
+        "dose": "20 mg",
+        "frequency": "once daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "gastroesophageal reflux disease",
+        "icd10": "K21.9"
+      }
+    ],
+    "plan": [
+      "continue omeprazole 20 mg once daily 30 minutes before breakfast",
+      "finish dinner at least three hours before bed",
+      "elevate head of bed",
+      "plan to taper off in 8 to 12 weeks if controlled"
+    ],
+    "follow_up": {
+      "interval_days": 90,
+      "reason": "GERD recheck and discuss tapering"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:09.799Z"
+}

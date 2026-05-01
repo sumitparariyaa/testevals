@@ -1,0 +1,242 @@
+{
+  "transcriptId": "case_026",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "constant anxiety with panic attacks",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "sertraline",
+        "dose": "25 mg",
+        "frequency": "once daily for one week then 50 mg once daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "generalized anxiety disorder",
+        "icd10": "F41.1"
+      },
+      {
+        "description": "panic attacks"
+      }
+    ],
+    "plan": [
+      "start sertraline 25 mg once daily, increase to 50 mg once daily after one week",
+      "referral for cognitive behavioral therapy",
+      "regular sleep schedule, no screens an hour before bed",
+      "call sooner if worsening mood or thoughts of self-harm"
+    ],
+    "follow_up": {
+      "interval_days": 28,
+      "reason": "check tolerance and response to sertraline"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "constant anxiety with panic attacks",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "generalized anxiety disorder",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[0]",
+        "value": "start sertraline 25 mg once daily, increase to 50 mg once daily after one week",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[1]",
+        "value": "referral for cognitive behavioral therapy",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "28",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "check tolerance and response to sertraline",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "sertraline",
+              "dose": "25 mg",
+              "frequency": "once daily for one week then 50 mg once daily",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "sertraline",
+              "dose": "25 mg",
+              "frequency": "once daily for one week then 50 mg once daily",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "start sertraline 25 mg once daily, increase to 50 mg once daily after one week",
+            "gold": "start sertraline 25 mg once daily, increase to 50 mg once daily after one week"
+          },
+          {
+            "predicted": "referral for cognitive behavioral therapy",
+            "gold": "referral for cognitive behavioral therapy"
+          },
+          {
+            "predicted": "regular sleep schedule, no screens an hour before bed",
+            "gold": "regular sleep schedule, no screens an hour before bed"
+          },
+          {
+            "predicted": "call sooner if worsening mood or thoughts of self-harm",
+            "gold": "call sooner if worsening mood or thoughts of self-harm"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_026"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "constant anxiety with panic attacks",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "sertraline",
+              "dose": "25 mg",
+              "frequency": "once daily for one week then 50 mg once daily",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "generalized anxiety disorder",
+              "icd10": "F41.1"
+            },
+            {
+              "description": "panic attacks"
+            }
+          ],
+          "plan": [
+            "start sertraline 25 mg once daily, increase to 50 mg once daily after one week",
+            "referral for cognitive behavioral therapy",
+            "regular sleep schedule, no screens an hour before bed",
+            "call sooner if worsening mood or thoughts of self-harm"
+          ],
+          "follow_up": {
+            "interval_days": 28,
+            "reason": "check tolerance and response to sertraline"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: telehealth, mental health]\r\n\r\nDoctor: Hi Olivia, how are you doing?\r\nPatient: Honestly, anxious all the time. My chest feels tight, I worry about everything. It's been months. I'm having trouble sleeping.\r\nDoctor: Any panic attacks?\r\nPatient: A few. Heart racing, can't breathe, feels like I'm dying.\r\nDoctor: Any thoughts of harming yourself?\r\nPatient: No, never.\r\nDoctor: Your GAD-7 score today was 16, that's severe. Let's start treatment. I'd like to begin sertraline 25 mg once daily for a week, then increase to 50 mg once daily. It can take 4 to 6 weeks to feel the full effect, and the first week or two may be a little jittery.\r\nPatient: Okay.\r\nDoctor: I'd also like to refer you for cognitive behavioral therapy. For sleep, try to keep a regular schedule, no screens an hour before bed.\r\nPatient: Thanks.\r\nDoctor: Check in with me in 4 weeks to see how you're tolerating the medication. Call sooner if any worsening mood or thoughts of self-harm.\r\n",
+  "gold": {
+    "chief_complaint": "constant anxiety with panic attacks",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "sertraline",
+        "dose": "25 mg",
+        "frequency": "once daily for one week then 50 mg once daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "generalized anxiety disorder",
+        "icd10": "F41.1"
+      },
+      {
+        "description": "panic attacks"
+      }
+    ],
+    "plan": [
+      "start sertraline 25 mg once daily, increase to 50 mg once daily after one week",
+      "referral for cognitive behavioral therapy",
+      "regular sleep schedule, no screens an hour before bed",
+      "call sooner if worsening mood or thoughts of self-harm"
+    ],
+    "follow_up": {
+      "interval_days": 28,
+      "reason": "check tolerance and response to sertraline"
+    }
+  },
+  "completedAt": "2026-05-01T10:06:45.212Z"
+}

@@ -1,0 +1,242 @@
+{
+  "transcriptId": "case_028",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "insomnia for two months",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "melatonin",
+        "dose": "3 mg",
+        "frequency": "30 minutes before bedtime",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "insomnia",
+        "icd10": "G47.00"
+      }
+    ],
+    "plan": [
+      "no caffeine after noon",
+      "no phones in bed; wind-down routine an hour before bed",
+      "consistent wake time including weekends",
+      "melatonin 3 mg 30 minutes before bedtime for two weeks",
+      "CBT-I app recommendation",
+      "message in 4 weeks if not improving"
+    ],
+    "follow_up": {
+      "interval_days": 28,
+      "reason": "insomnia reassessment"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "insomnia for two months",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "insomnia",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[2]",
+        "value": "consistent wake time including weekends",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "28",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "insomnia reassessment",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "melatonin",
+              "dose": "3 mg",
+              "frequency": "30 minutes before bedtime",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "melatonin",
+              "dose": "3 mg",
+              "frequency": "30 minutes before bedtime",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "no caffeine after noon",
+            "gold": "no caffeine after noon"
+          },
+          {
+            "predicted": "no phones in bed; wind-down routine an hour before bed",
+            "gold": "no phones in bed; wind-down routine an hour before bed"
+          },
+          {
+            "predicted": "consistent wake time including weekends",
+            "gold": "consistent wake time including weekends"
+          },
+          {
+            "predicted": "melatonin 3 mg 30 minutes before bedtime for two weeks",
+            "gold": "melatonin 3 mg 30 minutes before bedtime for two weeks"
+          },
+          {
+            "predicted": "CBT-I app recommendation",
+            "gold": "CBT-I app recommendation"
+          },
+          {
+            "predicted": "message in 4 weeks if not improving",
+            "gold": "message in 4 weeks if not improving"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "cot",
+        "transcriptId": "case_028"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "insomnia for two months",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "melatonin",
+              "dose": "3 mg",
+              "frequency": "30 minutes before bedtime",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "insomnia",
+              "icd10": "G47.00"
+            }
+          ],
+          "plan": [
+            "no caffeine after noon",
+            "no phones in bed; wind-down routine an hour before bed",
+            "consistent wake time including weekends",
+            "melatonin 3 mg 30 minutes before bedtime for two weeks",
+            "CBT-I app recommendation",
+            "message in 4 weeks if not improving"
+          ],
+          "follow_up": {
+            "interval_days": 28,
+            "reason": "insomnia reassessment"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "dd25af3e1241b9e2",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: telehealth]\r\n\r\nDoctor: Hi Sandra, what's been going on with sleep?\r\nPatient: I can't fall asleep until 2 or 3 am, and even then I wake up multiple times. Been this way for two months. I'm exhausted.\r\nDoctor: Snoring? Any caffeine, alcohol, screen time?\r\nPatient: I drink coffee until 4 pm. I scroll my phone in bed.\r\nDoctor: Let's start with sleep hygiene. No caffeine after noon. No phones in bed — wind-down routine starting an hour before bed. Consistent wake time, even on weekends.\r\nPatient: Anything to help short term?\r\nDoctor: I'd rather not start a sleep medication first-line. Try melatonin 3 mg about 30 minutes before bedtime for two weeks while you implement the changes. I'll send you a CBT-I app recommendation — it's the most effective long-term treatment.\r\nPatient: Okay.\r\nDoctor: If sleep isn't improving in 4 weeks, we'll reassess and may consider trazodone short term. Message me in 4 weeks.\r\n",
+  "gold": {
+    "chief_complaint": "insomnia for two months",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "melatonin",
+        "dose": "3 mg",
+        "frequency": "30 minutes before bedtime",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "insomnia",
+        "icd10": "G47.00"
+      }
+    ],
+    "plan": [
+      "no caffeine after noon",
+      "no phones in bed; wind-down routine an hour before bed",
+      "consistent wake time including weekends",
+      "melatonin 3 mg 30 minutes before bedtime for two weeks",
+      "CBT-I app recommendation",
+      "message in 4 weeks if not improving"
+    ],
+    "follow_up": {
+      "interval_days": 28,
+      "reason": "insomnia reassessment"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:23.181Z"
+}

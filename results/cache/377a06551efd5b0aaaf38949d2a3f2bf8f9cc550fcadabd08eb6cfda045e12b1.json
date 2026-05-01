@@ -1,0 +1,248 @@
+{
+  "transcriptId": "case_019",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "atrial fibrillation follow-up",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "apixaban",
+        "dose": "5 mg",
+        "frequency": "twice daily",
+        "route": "PO"
+      },
+      {
+        "name": "metoprolol succinate",
+        "dose": "50 mg",
+        "frequency": "once daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "atrial fibrillation",
+        "icd10": "I48.91"
+      }
+    ],
+    "plan": [
+      "continue apixaban 5 mg twice daily",
+      "continue metoprolol succinate 50 mg once daily",
+      "basic metabolic panel and CBC in 2 months"
+    ],
+    "follow_up": {
+      "interval_days": 180,
+      "reason": "AFib management"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "atrial fibrillation follow-up",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[1].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "atrial fibrillation",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "180",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "apixaban",
+              "dose": "5 mg",
+              "frequency": "twice daily",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "apixaban",
+              "dose": "5 mg",
+              "frequency": "twice daily",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "metoprolol succinate",
+              "dose": "50 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "metoprolol succinate",
+              "dose": "50 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "continue apixaban 5 mg twice daily",
+            "gold": "continue apixaban 5 mg twice daily"
+          },
+          {
+            "predicted": "continue metoprolol succinate 50 mg once daily",
+            "gold": "continue metoprolol succinate 50 mg once daily"
+          },
+          {
+            "predicted": "basic metabolic panel and CBC in 2 months",
+            "gold": "basic metabolic panel and CBC in 2 months"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_019"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "atrial fibrillation follow-up",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "apixaban",
+              "dose": "5 mg",
+              "frequency": "twice daily",
+              "route": "PO"
+            },
+            {
+              "name": "metoprolol succinate",
+              "dose": "50 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "atrial fibrillation",
+              "icd10": "I48.91"
+            }
+          ],
+          "plan": [
+            "continue apixaban 5 mg twice daily",
+            "continue metoprolol succinate 50 mg once daily",
+            "basic metabolic panel and CBC in 2 months"
+          ],
+          "follow_up": {
+            "interval_days": 180,
+            "reason": "AFib management"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: telehealth, AFib follow-up]\r\n\r\nDoctor: Hi Bernard. How have things been on the apixaban?\r\nPatient: Good. No bleeding, no bruising beyond the usual. Heart rate has felt steady.\r\nDoctor: Any palpitations, chest pain, lightheadedness?\r\nPatient: None.\r\nDoctor: Great. Continue apixaban 5 mg twice daily and metoprolol succinate 50 mg once daily. Your last EKG showed controlled AFib at rate around 70.\r\nPatient: When do I need labs again?\r\nDoctor: A basic metabolic panel and CBC every 6 months. Last was 4 months ago, so let's plan another in 2 months.\r\nPatient: Sounds good.\r\nDoctor: Follow up with me in 6 months for AFib management. Sooner if anything changes.\r\n",
+  "gold": {
+    "chief_complaint": "atrial fibrillation follow-up",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "apixaban",
+        "dose": "5 mg",
+        "frequency": "twice daily",
+        "route": "PO"
+      },
+      {
+        "name": "metoprolol succinate",
+        "dose": "50 mg",
+        "frequency": "once daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "atrial fibrillation",
+        "icd10": "I48.91"
+      }
+    ],
+    "plan": [
+      "continue apixaban 5 mg twice daily",
+      "continue metoprolol succinate 50 mg once daily",
+      "basic metabolic panel and CBC in 2 months"
+    ],
+    "follow_up": {
+      "interval_days": 180,
+      "reason": "AFib management"
+    }
+  },
+  "completedAt": "2026-05-01T10:06:43.890Z"
+}

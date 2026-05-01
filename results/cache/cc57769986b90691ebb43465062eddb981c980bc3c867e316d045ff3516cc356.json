@@ -1,0 +1,247 @@
+{
+  "transcriptId": "case_033",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "itchy red rash on forearms and back of knees for two weeks",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "triamcinolone 0.1% ointment",
+        "dose": null,
+        "frequency": "twice daily",
+        "route": "topical"
+      },
+      {
+        "name": "cetirizine",
+        "dose": "10 mg",
+        "frequency": "once daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "atopic dermatitis",
+        "icd10": "L20.9"
+      }
+    ],
+    "plan": [
+      "switch to gentle, fragrance-free body wash",
+      "apply thick fragrance-free moisturizer twice a day, especially within 3 minutes after showers",
+      "triamcinolone 0.1% ointment to affected areas twice daily for up to 2 weeks",
+      "cetirizine 10 mg once daily for itch",
+      "return if not improving in 2 weeks or signs of skin infection"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": null
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "medications[0].route",
+        "value": "topical",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[4]",
+        "value": "return if not improving in 2 weeks or signs of skin infection",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "triamcinolone 0.1% ointment",
+              "dose": null,
+              "frequency": "twice daily",
+              "route": "topical"
+            },
+            "gold": {
+              "name": "triamcinolone 0.1% ointment",
+              "dose": null,
+              "frequency": "twice daily",
+              "route": "topical"
+            }
+          },
+          {
+            "predicted": {
+              "name": "cetirizine",
+              "dose": "10 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "cetirizine",
+              "dose": "10 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "switch to gentle, fragrance-free body wash",
+            "gold": "switch to gentle, fragrance-free body wash"
+          },
+          {
+            "predicted": "apply thick fragrance-free moisturizer twice a day, especially within 3 minutes after showers",
+            "gold": "apply thick fragrance-free moisturizer twice a day, especially within 3 minutes after showers"
+          },
+          {
+            "predicted": "triamcinolone 0.1% ointment to affected areas twice daily for up to 2 weeks",
+            "gold": "triamcinolone 0.1% ointment to affected areas twice daily for up to 2 weeks"
+          },
+          {
+            "predicted": "cetirizine 10 mg once daily for itch",
+            "gold": "cetirizine 10 mg once daily for itch"
+          },
+          {
+            "predicted": "return if not improving in 2 weeks or signs of skin infection",
+            "gold": "return if not improving in 2 weeks or signs of skin infection"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_033"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "itchy red rash on forearms and back of knees for two weeks",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "triamcinolone 0.1% ointment",
+              "dose": null,
+              "frequency": "twice daily",
+              "route": "topical"
+            },
+            {
+              "name": "cetirizine",
+              "dose": "10 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "atopic dermatitis",
+              "icd10": "L20.9"
+            }
+          ],
+          "plan": [
+            "switch to gentle, fragrance-free body wash",
+            "apply thick fragrance-free moisturizer twice a day, especially within 3 minutes after showers",
+            "triamcinolone 0.1% ointment to affected areas twice daily for up to 2 weeks",
+            "cetirizine 10 mg once daily for itch",
+            "return if not improving in 2 weeks or signs of skin infection"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": null
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person]\r\n\r\nDoctor: Hi Mia, what's going on with the rash?\r\nPatient: I've had this itchy red rash on my forearms and the back of my knees for two weeks. It flares when I'm stressed and when the weather is dry.\r\nDoctor: Any new soaps, detergents, lotions?\r\nPatient: I switched to a new body wash about three weeks ago.\r\nDoctor: Exam shows poorly demarcated erythematous plaques with mild lichenification at flexural areas. This is consistent with atopic dermatitis, possibly worsened by an irritant body wash.\r\nPatient: What helps?\r\nDoctor: Switch back to a gentle, fragrance-free wash. Use a thick fragrance-free moisturizer twice a day, especially after showers within 3 minutes. Apply triamcinolone 0.1% ointment to affected areas twice daily for up to 2 weeks. For itch, take cetirizine 10 mg once daily.\r\nPatient: Okay.\r\nDoctor: If not improving in 2 weeks or you see signs of skin infection — pus, increased redness, warmth — come back. Otherwise no scheduled follow-up.\r\n",
+  "gold": {
+    "chief_complaint": "itchy red rash on forearms and back of knees for two weeks",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "triamcinolone 0.1% ointment",
+        "dose": null,
+        "frequency": "twice daily",
+        "route": "topical"
+      },
+      {
+        "name": "cetirizine",
+        "dose": "10 mg",
+        "frequency": "once daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "atopic dermatitis",
+        "icd10": "L20.9"
+      }
+    ],
+    "plan": [
+      "switch to gentle, fragrance-free body wash",
+      "apply thick fragrance-free moisturizer twice a day, especially within 3 minutes after showers",
+      "triamcinolone 0.1% ointment to affected areas twice daily for up to 2 weeks",
+      "cetirizine 10 mg once daily for itch",
+      "return if not improving in 2 weeks or signs of skin infection"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": null
+    }
+  },
+  "completedAt": "2026-05-01T10:06:46.024Z"
+}

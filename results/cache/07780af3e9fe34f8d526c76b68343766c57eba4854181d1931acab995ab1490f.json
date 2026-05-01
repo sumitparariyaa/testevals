@@ -1,0 +1,197 @@
+{
+  "transcriptId": "case_008",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "positive COVID test with mild symptoms",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "acetaminophen",
+        "dose": "500 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "COVID-19",
+        "icd10": "U07.1"
+      }
+    ],
+    "plan": [
+      "supportive care with rest and fluids",
+      "acetaminophen 500 mg every 6 hours as needed for aches",
+      "isolate per CDC guidance",
+      "call if shortness of breath or worsening symptoms develop"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": null
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "acetaminophen",
+              "dose": "500 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "acetaminophen",
+              "dose": "500 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "supportive care with rest and fluids",
+            "gold": "supportive care with rest and fluids"
+          },
+          {
+            "predicted": "acetaminophen 500 mg every 6 hours as needed for aches",
+            "gold": "acetaminophen 500 mg every 6 hours as needed for aches"
+          },
+          {
+            "predicted": "isolate per CDC guidance",
+            "gold": "isolate per CDC guidance"
+          },
+          {
+            "predicted": "call if shortness of breath or worsening symptoms develop",
+            "gold": "call if shortness of breath or worsening symptoms develop"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "few_shot",
+        "transcriptId": "case_008"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "positive COVID test with mild symptoms",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "acetaminophen",
+              "dose": "500 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "COVID-19",
+              "icd10": "U07.1"
+            }
+          ],
+          "plan": [
+            "supportive care with rest and fluids",
+            "acetaminophen 500 mg every 6 hours as needed for aches",
+            "isolate per CDC guidance",
+            "call if shortness of breath or worsening symptoms develop"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": null
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "0104e919dec297ce",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: telehealth]\r\n\r\nDoctor: Hi Marcus, you tested positive for COVID at home?\r\nPatient: Yes, two days ago. I have a runny nose, mild cough, low fever yesterday around 99.5, and feel tired but otherwise okay.\r\nDoctor: Any shortness of breath, chest pain, confusion?\r\nPatient: No, none of that.\r\nDoctor: Any high-risk conditions? You're 34 and otherwise healthy from your chart.\r\nPatient: Right.\r\nDoctor: For a healthy adult with mild symptoms, antivirals like Paxlovid aren't generally indicated. Supportive care: rest, fluids, acetaminophen 500 mg every 6 hours as needed for aches. Isolate per CDC guidance.\r\nPatient: When can I go back to work?\r\nDoctor: When you've been fever-free for 24 hours without medication and symptoms are improving, generally around day 5 with a mask through day 10.\r\nPatient: Got it.\r\nDoctor: Call us if you develop shortness of breath or worsening symptoms. No follow-up otherwise.\r\n",
+  "gold": {
+    "chief_complaint": "positive COVID test with mild symptoms",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "acetaminophen",
+        "dose": "500 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "COVID-19",
+        "icd10": "U07.1"
+      }
+    ],
+    "plan": [
+      "supportive care with rest and fluids",
+      "acetaminophen 500 mg every 6 hours as needed for aches",
+      "isolate per CDC guidance",
+      "call if shortness of breath or worsening symptoms develop"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": null
+    }
+  },
+  "completedAt": "2026-05-01T10:07:09.505Z"
+}

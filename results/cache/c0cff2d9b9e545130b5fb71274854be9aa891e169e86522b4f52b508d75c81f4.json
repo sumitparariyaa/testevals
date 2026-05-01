@@ -1,0 +1,257 @@
+{
+  "transcriptId": "case_021",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "acute low back pain after lifting",
+    "vitals": {
+      "bp": "124/78",
+      "hr": 72,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "ibuprofen",
+        "dose": "600 mg",
+        "frequency": "three times daily with food",
+        "route": "PO"
+      },
+      {
+        "name": "cyclobenzaprine",
+        "dose": "10 mg",
+        "frequency": "at bedtime as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "acute mechanical low back strain",
+        "icd10": "M54.5"
+      }
+    ],
+    "plan": [
+      "ibuprofen 600 mg three times daily with food for 7 to 10 days",
+      "cyclobenzaprine 10 mg at bedtime as needed for muscle spasm",
+      "stay active, avoid bed rest",
+      "use heat",
+      "return if not significantly better in 4 weeks or red flags develop"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "return if not improved in 4 weeks or red flags develop"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "acute low back pain after lifting",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[3]",
+        "value": "use heat",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[4]",
+        "value": "return if not significantly better in 4 weeks or red flags develop",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "return if not improved in 4 weeks or red flags develop",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "three times daily with food",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "three times daily with food",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "cyclobenzaprine",
+              "dose": "10 mg",
+              "frequency": "at bedtime as needed",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "cyclobenzaprine",
+              "dose": "10 mg",
+              "frequency": "at bedtime as needed",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "ibuprofen 600 mg three times daily with food for 7 to 10 days",
+            "gold": "ibuprofen 600 mg three times daily with food for 7 to 10 days"
+          },
+          {
+            "predicted": "cyclobenzaprine 10 mg at bedtime as needed for muscle spasm",
+            "gold": "cyclobenzaprine 10 mg at bedtime as needed for muscle spasm"
+          },
+          {
+            "predicted": "stay active, avoid bed rest",
+            "gold": "stay active, avoid bed rest"
+          },
+          {
+            "predicted": "use heat",
+            "gold": "use heat"
+          },
+          {
+            "predicted": "return if not significantly better in 4 weeks or red flags develop",
+            "gold": "return if not significantly better in 4 weeks or red flags develop"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "cot",
+        "transcriptId": "case_021"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "acute low back pain after lifting",
+          "vitals": {
+            "bp": "124/78",
+            "hr": 72,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "three times daily with food",
+              "route": "PO"
+            },
+            {
+              "name": "cyclobenzaprine",
+              "dose": "10 mg",
+              "frequency": "at bedtime as needed",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "acute mechanical low back strain",
+              "icd10": "M54.5"
+            }
+          ],
+          "plan": [
+            "ibuprofen 600 mg three times daily with food for 7 to 10 days",
+            "cyclobenzaprine 10 mg at bedtime as needed for muscle spasm",
+            "stay active, avoid bed rest",
+            "use heat",
+            "return if not significantly better in 4 weeks or red flags develop"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": "return if not improved in 4 weeks or red flags develop"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "dd25af3e1241b9e2",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person]\r\n[Vitals: BP 124/78, HR 72]\r\n\r\nDoctor: Hi Tom, low back pain again?\r\nPatient: Yeah. I lifted a couch on Saturday. Felt a pop. Pain across my low back, no radiation down the leg, no numbness or tingling.\r\nDoctor: Bowel and bladder normal? No saddle area numbness?\r\nPatient: Normal.\r\nDoctor: Good. Exam: paraspinal tenderness, no neuro deficits, straight leg raise negative bilaterally. This is acute mechanical low back strain.\r\nPatient: Do I need an MRI?\r\nDoctor: Not in the first 6 weeks unless red flags develop. Ibuprofen 600 mg three times daily with food for 7 to 10 days, and cyclobenzaprine 10 mg at bedtime as needed for muscle spasm — only if pain interferes with sleep, it can make you drowsy.\r\nPatient: Should I rest?\r\nDoctor: Stay active. Walk regularly, avoid bed rest. Heat can help. If not significantly better in 4 weeks or you develop leg weakness, numbness, or bowel/bladder changes, come back.\r\n",
+  "gold": {
+    "chief_complaint": "acute low back pain after lifting",
+    "vitals": {
+      "bp": "124/78",
+      "hr": 72,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "ibuprofen",
+        "dose": "600 mg",
+        "frequency": "three times daily with food",
+        "route": "PO"
+      },
+      {
+        "name": "cyclobenzaprine",
+        "dose": "10 mg",
+        "frequency": "at bedtime as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "acute mechanical low back strain",
+        "icd10": "M54.5"
+      }
+    ],
+    "plan": [
+      "ibuprofen 600 mg three times daily with food for 7 to 10 days",
+      "cyclobenzaprine 10 mg at bedtime as needed for muscle spasm",
+      "stay active, avoid bed rest",
+      "use heat",
+      "return if not significantly better in 4 weeks or red flags develop"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "return if not improved in 4 weeks or red flags develop"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:22.240Z"
+}

@@ -1,0 +1,223 @@
+{
+  "transcriptId": "case_027",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "depression follow-up on fluoxetine",
+    "vitals": {
+      "bp": "118/74",
+      "hr": 70,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "fluoxetine",
+        "dose": "20 mg",
+        "frequency": "once daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "major depressive disorder, improving",
+        "icd10": "F32.9"
+      }
+    ],
+    "plan": [
+      "continue fluoxetine 20 mg once daily",
+      "continue weekly therapy",
+      "plan 9 to 12 months of medication once well",
+      "call sooner if mood worsens or thoughts of self-harm"
+    ],
+    "follow_up": {
+      "interval_days": 56,
+      "reason": "depression follow-up"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "depression follow-up on fluoxetine",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "diagnoses[0].description",
+        "value": "major depressive disorder, improving",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "56",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "depression follow-up",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "fluoxetine",
+              "dose": "20 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "fluoxetine",
+              "dose": "20 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "continue fluoxetine 20 mg once daily",
+            "gold": "continue fluoxetine 20 mg once daily"
+          },
+          {
+            "predicted": "continue weekly therapy",
+            "gold": "continue weekly therapy"
+          },
+          {
+            "predicted": "plan 9 to 12 months of medication once well",
+            "gold": "plan 9 to 12 months of medication once well"
+          },
+          {
+            "predicted": "call sooner if mood worsens or thoughts of self-harm",
+            "gold": "call sooner if mood worsens or thoughts of self-harm"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_027"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "depression follow-up on fluoxetine",
+          "vitals": {
+            "bp": "118/74",
+            "hr": 70,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "fluoxetine",
+              "dose": "20 mg",
+              "frequency": "once daily",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "major depressive disorder, improving",
+              "icd10": "F32.9"
+            }
+          ],
+          "plan": [
+            "continue fluoxetine 20 mg once daily",
+            "continue weekly therapy",
+            "plan 9 to 12 months of medication once well",
+            "call sooner if mood worsens or thoughts of self-harm"
+          ],
+          "follow_up": {
+            "interval_days": 56,
+            "reason": "depression follow-up"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person, mental health follow-up]\r\n[Vitals: BP 118/74, HR 70]\r\n\r\nDoctor: Hi Ben, you've been on fluoxetine 20 mg once daily for 8 weeks. How's your mood?\r\nPatient: Better. PHQ-9 today was 7, down from 19. I still have low days but I'm functioning. I'm back at the gym.\r\nDoctor: Sleep, appetite, energy?\r\nPatient: All improved.\r\nDoctor: Any side effects? Sexual dysfunction is the most common one.\r\nPatient: A little, but manageable.\r\nDoctor: We can revisit if it bothers you. Plan: continue fluoxetine 20 mg once daily. Continue weekly therapy. Recommend at least 9 to 12 months of medication once you're well to prevent relapse.\r\nPatient: Got it.\r\nDoctor: Follow up in 8 weeks. Call sooner if mood worsens or any thoughts of self-harm.\r\n",
+  "gold": {
+    "chief_complaint": "depression follow-up on fluoxetine",
+    "vitals": {
+      "bp": "118/74",
+      "hr": 70,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "fluoxetine",
+        "dose": "20 mg",
+        "frequency": "once daily",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "major depressive disorder, improving",
+        "icd10": "F32.9"
+      }
+    ],
+    "plan": [
+      "continue fluoxetine 20 mg once daily",
+      "continue weekly therapy",
+      "plan 9 to 12 months of medication once well",
+      "call sooner if mood worsens or thoughts of self-harm"
+    ],
+    "follow_up": {
+      "interval_days": 56,
+      "reason": "depression follow-up"
+    }
+  },
+  "completedAt": "2026-05-01T10:06:45.260Z"
+}

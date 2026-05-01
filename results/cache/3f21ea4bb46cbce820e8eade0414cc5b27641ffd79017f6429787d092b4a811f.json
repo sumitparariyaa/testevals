@@ -1,0 +1,291 @@
+{
+  "transcriptId": "case_049",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "boiling water burn to forearm",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "silver sulfadiazine 1% cream",
+        "dose": null,
+        "frequency": "twice daily",
+        "route": "topical"
+      },
+      {
+        "name": "ibuprofen",
+        "dose": "600 mg",
+        "frequency": "every 6 hours with food",
+        "route": "PO"
+      },
+      {
+        "name": "acetaminophen",
+        "dose": "500 mg",
+        "frequency": "every 6 hours",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "partial-thickness second-degree burn of forearm",
+        "icd10": "T22.219A"
+      }
+    ],
+    "plan": [
+      "clean burn with mild soap and water; leave intact blisters intact, debride loose skin",
+      "cover with non-adherent dressing",
+      "silver sulfadiazine 1% cream applied twice daily",
+      "ibuprofen 600 mg every 6 hours with food and acetaminophen 500 mg every 6 hours, alternating if needed",
+      "change dressing daily",
+      "call for signs of infection"
+    ],
+    "follow_up": {
+      "interval_days": 3,
+      "reason": "wound check"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "medications[0].route",
+        "value": "topical",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[1].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[2].route",
+        "value": "PO",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "silver sulfadiazine 1% cream",
+              "dose": null,
+              "frequency": "twice daily",
+              "route": "topical"
+            },
+            "gold": {
+              "name": "silver sulfadiazine 1% cream",
+              "dose": null,
+              "frequency": "twice daily",
+              "route": "topical"
+            }
+          },
+          {
+            "predicted": {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "every 6 hours with food",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "every 6 hours with food",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "acetaminophen",
+              "dose": "500 mg",
+              "frequency": "every 6 hours",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "acetaminophen",
+              "dose": "500 mg",
+              "frequency": "every 6 hours",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "clean burn with mild soap and water; leave intact blisters intact, debride loose skin",
+            "gold": "clean burn with mild soap and water; leave intact blisters intact, debride loose skin"
+          },
+          {
+            "predicted": "cover with non-adherent dressing",
+            "gold": "cover with non-adherent dressing"
+          },
+          {
+            "predicted": "silver sulfadiazine 1% cream applied twice daily",
+            "gold": "silver sulfadiazine 1% cream applied twice daily"
+          },
+          {
+            "predicted": "ibuprofen 600 mg every 6 hours with food and acetaminophen 500 mg every 6 hours, alternating if needed",
+            "gold": "ibuprofen 600 mg every 6 hours with food and acetaminophen 500 mg every 6 hours, alternating if needed"
+          },
+          {
+            "predicted": "change dressing daily",
+            "gold": "change dressing daily"
+          },
+          {
+            "predicted": "call for signs of infection",
+            "gold": "call for signs of infection"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_049"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "boiling water burn to forearm",
+          "vitals": {
+            "bp": null,
+            "hr": null,
+            "temp_f": null,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "silver sulfadiazine 1% cream",
+              "dose": null,
+              "frequency": "twice daily",
+              "route": "topical"
+            },
+            {
+              "name": "ibuprofen",
+              "dose": "600 mg",
+              "frequency": "every 6 hours with food",
+              "route": "PO"
+            },
+            {
+              "name": "acetaminophen",
+              "dose": "500 mg",
+              "frequency": "every 6 hours",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "partial-thickness second-degree burn of forearm",
+              "icd10": "T22.219A"
+            }
+          ],
+          "plan": [
+            "clean burn with mild soap and water; leave intact blisters intact, debride loose skin",
+            "cover with non-adherent dressing",
+            "silver sulfadiazine 1% cream applied twice daily",
+            "ibuprofen 600 mg every 6 hours with food and acetaminophen 500 mg every 6 hours, alternating if needed",
+            "change dressing daily",
+            "call for signs of infection"
+          ],
+          "follow_up": {
+            "interval_days": 3,
+            "reason": "wound check"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: in-person urgent]\r\n\r\nDoctor: Hi Aaron. Burn from the stove?\r\nPatient: Yes, splashed boiling water on my forearm yesterday. It blistered last night. Pretty painful.\r\nDoctor: Let me see. You've got an area roughly 4 by 5 cm on the dorsal forearm, with intact blisters, pink moist base where one has unroofed, brisk capillary refill, sensation intact. This is a partial-thickness, second-degree burn. Less than 1% body surface area.\r\nPatient: Okay.\r\nDoctor: We'll clean it with mild soap and water, leave intact blisters intact, debride the loose skin from the unroofed one. I'll cover it with a non-adherent dressing and silver sulfadiazine 1% cream applied twice daily.\r\nPatient: Pain control?\r\nDoctor: Ibuprofen 600 mg every 6 hours with food and acetaminophen 500 mg every 6 hours, alternating if needed.\r\nPatient: How long?\r\nDoctor: Usually heals in 2 to 3 weeks. Keep it covered, change the dressing daily. Watch for signs of infection — increased pain, redness spreading, drainage, fever — call us. Return for a wound check in 3 days.\r\n",
+  "gold": {
+    "chief_complaint": "boiling water burn to forearm",
+    "vitals": {
+      "bp": null,
+      "hr": null,
+      "temp_f": null,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "silver sulfadiazine 1% cream",
+        "dose": null,
+        "frequency": "twice daily",
+        "route": "topical"
+      },
+      {
+        "name": "ibuprofen",
+        "dose": "600 mg",
+        "frequency": "every 6 hours with food",
+        "route": "PO"
+      },
+      {
+        "name": "acetaminophen",
+        "dose": "500 mg",
+        "frequency": "every 6 hours",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "partial-thickness second-degree burn of forearm",
+        "icd10": "T22.219A"
+      }
+    ],
+    "plan": [
+      "clean burn with mild soap and water; leave intact blisters intact, debride loose skin",
+      "cover with non-adherent dressing",
+      "silver sulfadiazine 1% cream applied twice daily",
+      "ibuprofen 600 mg every 6 hours with food and acetaminophen 500 mg every 6 hours, alternating if needed",
+      "change dressing daily",
+      "call for signs of infection"
+    ],
+    "follow_up": {
+      "interval_days": 3,
+      "reason": "wound check"
+    }
+  },
+  "completedAt": "2026-05-01T10:06:48.153Z"
+}

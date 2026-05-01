@@ -1,0 +1,206 @@
+{
+  "transcriptId": "case_001",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "sore throat and nasal congestion for four days",
+    "vitals": {
+      "bp": "122/78",
+      "hr": 88,
+      "temp_f": 100.4,
+      "spo2": 98
+    },
+    "medications": [
+      {
+        "name": "ibuprofen",
+        "dose": "400 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "viral upper respiratory infection",
+        "icd10": "J06.9"
+      }
+    ],
+    "plan": [
+      "supportive care with fluids and saline nasal spray",
+      "ibuprofen 400 mg every 6 hours as needed for pain and fever",
+      "call if not improving in 7 days or fever above 102"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "return only if symptoms worsen"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "sore throat and nasal congestion for four days",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[0]",
+        "value": "supportive care with fluids and saline nasal spray",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "return only if symptoms worsen",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "ibuprofen",
+              "dose": "400 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "ibuprofen",
+              "dose": "400 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "supportive care with fluids and saline nasal spray",
+            "gold": "supportive care with fluids and saline nasal spray"
+          },
+          {
+            "predicted": "ibuprofen 400 mg every 6 hours as needed for pain and fever",
+            "gold": "ibuprofen 400 mg every 6 hours as needed for pain and fever"
+          },
+          {
+            "predicted": "call if not improving in 7 days or fever above 102",
+            "gold": "call if not improving in 7 days or fever above 102"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "cot",
+        "transcriptId": "case_001"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "sore throat and nasal congestion for four days",
+          "vitals": {
+            "bp": "122/78",
+            "hr": 88,
+            "temp_f": 100.4,
+            "spo2": 98
+          },
+          "medications": [
+            {
+              "name": "ibuprofen",
+              "dose": "400 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "viral upper respiratory infection",
+              "icd10": "J06.9"
+            }
+          ],
+          "plan": [
+            "supportive care with fluids and saline nasal spray",
+            "ibuprofen 400 mg every 6 hours as needed for pain and fever",
+            "call if not improving in 7 days or fever above 102"
+          ],
+          "follow_up": {
+            "interval_days": null,
+            "reason": "return only if symptoms worsen"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "dd25af3e1241b9e2",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 2,
+  "transcript": "[Visit type: in-person sick visit]\r\n[Vitals taken at intake: BP 122/78, HR 88, Temp 100.4, SpO2 98%]\r\n\r\nDoctor: Hi Jenna, what brings you in today?\r\nPatient: I've had a sore throat for about four days, and now my nose is completely stuffed up. I feel awful.\r\nDoctor: Any cough?\r\nPatient: A little dry one at night.\r\nDoctor: Fever?\r\nPatient: I felt warm yesterday. The thermometer here said 100.4.\r\nDoctor: Let me take a look. Throat is red but no exudate, ears are clear, lungs sound fine. Rapid strep is negative. This looks like a viral upper respiratory infection.\r\nPatient: Can I get an antibiotic just in case?\r\nDoctor: Antibiotics won't help a virus, and they'd just give you side effects. Let's do supportive care. Take ibuprofen 400 mg every 6 hours as needed for the throat pain and fever, plenty of fluids, and saline nasal spray. If you're not improving in 7 days, or you spike a fever above 102, give us a call.\r\nPatient: Okay, that makes sense.\r\nDoctor: No need for a follow-up unless symptoms worsen.\r\n",
+  "gold": {
+    "chief_complaint": "sore throat and nasal congestion for four days",
+    "vitals": {
+      "bp": "122/78",
+      "hr": 88,
+      "temp_f": 100.4,
+      "spo2": 98
+    },
+    "medications": [
+      {
+        "name": "ibuprofen",
+        "dose": "400 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "viral upper respiratory infection",
+        "icd10": "J06.9"
+      }
+    ],
+    "plan": [
+      "supportive care with fluids and saline nasal spray",
+      "ibuprofen 400 mg every 6 hours as needed for pain and fever",
+      "call if not improving in 7 days or fever above 102"
+    ],
+    "follow_up": {
+      "interval_days": null,
+      "reason": "return only if symptoms worsen"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:19.418Z"
+}

@@ -1,0 +1,220 @@
+{
+  "transcriptId": "case_030",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "4-year-old well-child visit",
+    "vitals": {
+      "bp": null,
+      "hr": 96,
+      "temp_f": 98.6,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "Tylenol",
+        "dose": "160 mg",
+        "frequency": "as needed for fever or soreness",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "well-child examination",
+        "icd10": "Z00.129"
+      }
+    ],
+    "plan": [
+      "administer DTaP, IPV, MMR, and varicella boosters",
+      "annual flu shot",
+      "limit screens to under one hour a day",
+      "family meals and outdoor play",
+      "brush teeth twice daily and dental visit every 6 months"
+    ],
+    "follow_up": {
+      "interval_days": 365,
+      "reason": "next well-child at age 5"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "diagnoses[0].description",
+        "value": "well-child examination",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[0]",
+        "value": "administer DTaP, IPV, MMR, and varicella boosters",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "365",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "Tylenol",
+              "dose": "160 mg",
+              "frequency": "as needed for fever or soreness",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "Tylenol",
+              "dose": "160 mg",
+              "frequency": "as needed for fever or soreness",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "administer DTaP, IPV, MMR, and varicella boosters",
+            "gold": "administer DTaP, IPV, MMR, and varicella boosters"
+          },
+          {
+            "predicted": "annual flu shot",
+            "gold": "annual flu shot"
+          },
+          {
+            "predicted": "limit screens to under one hour a day",
+            "gold": "limit screens to under one hour a day"
+          },
+          {
+            "predicted": "family meals and outdoor play",
+            "gold": "family meals and outdoor play"
+          },
+          {
+            "predicted": "brush teeth twice daily and dental visit every 6 months",
+            "gold": "brush teeth twice daily and dental visit every 6 months"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "few_shot",
+        "transcriptId": "case_030"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "4-year-old well-child visit",
+          "vitals": {
+            "bp": null,
+            "hr": 96,
+            "temp_f": 98.6,
+            "spo2": null
+          },
+          "medications": [
+            {
+              "name": "Tylenol",
+              "dose": "160 mg",
+              "frequency": "as needed for fever or soreness",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "well-child examination",
+              "icd10": "Z00.129"
+            }
+          ],
+          "plan": [
+            "administer DTaP, IPV, MMR, and varicella boosters",
+            "annual flu shot",
+            "limit screens to under one hour a day",
+            "family meals and outdoor play",
+            "brush teeth twice daily and dental visit every 6 months"
+          ],
+          "follow_up": {
+            "interval_days": 365,
+            "reason": "next well-child at age 5"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "0104e919dec297ce",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: pediatric well-child, 4-year-old]\r\n[Vitals: HR 96, Temp 98.6]\r\n\r\nDoctor: Hi, how is Amelia doing?\r\nPatient (parent): Great. Eating, sleeping, playing. Started preschool last month and loves it.\r\nDoctor: Any concerns with speech, behavior, toileting?\r\nParent: None. She uses full sentences, plays well with others.\r\nDoctor: Height and weight tracking 50th percentile, growth curve looking good. Exam unremarkable. Eyes, ears, heart, lungs, abdomen all normal. Vision and hearing screen passed today.\r\nParent: Vaccines today?\r\nDoctor: She's due for DTaP, IPV, MMR, and varicella boosters today. We'll do an annual flu shot too — that's four total, two in each thigh. Tylenol 160 mg by mouth as needed for fever or soreness afterward.\r\nParent: Okay.\r\nDoctor: Limit screens to under one hour a day, family meals when possible, lots of outdoor play. Brushing teeth twice daily, dental visit every 6 months.\r\nParent: Got it.\r\nDoctor: Next well-child at age 5. Call if any concerns sooner.\r\n",
+  "gold": {
+    "chief_complaint": "4-year-old well-child visit",
+    "vitals": {
+      "bp": null,
+      "hr": 96,
+      "temp_f": 98.6,
+      "spo2": null
+    },
+    "medications": [
+      {
+        "name": "Tylenol",
+        "dose": "160 mg",
+        "frequency": "as needed for fever or soreness",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "well-child examination",
+        "icd10": "Z00.129"
+      }
+    ],
+    "plan": [
+      "administer DTaP, IPV, MMR, and varicella boosters",
+      "annual flu shot",
+      "limit screens to under one hour a day",
+      "family meals and outdoor play",
+      "brush teeth twice daily and dental visit every 6 months"
+    ],
+    "follow_up": {
+      "interval_days": 365,
+      "reason": "next well-child at age 5"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:12.782Z"
+}

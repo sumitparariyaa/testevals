@@ -1,0 +1,186 @@
+{
+  "transcriptId": "case_042",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "annual physical",
+    "vitals": {
+      "bp": "122/78",
+      "hr": 70,
+      "temp_f": 98.4,
+      "spo2": 99
+    },
+    "medications": [],
+    "diagnoses": [
+      {
+        "description": "encounter for adult preventive examination",
+        "icd10": "Z00.00"
+      }
+    ],
+    "plan": [
+      "lipid panel, fasting glucose, A1c, comprehensive metabolic panel, CBC, TSH",
+      "schedule screening mammogram",
+      "schedule first colonoscopy",
+      "Pap smear today",
+      "tetanus booster today",
+      "continue regular exercise, alcohol under one drink a day"
+    ],
+    "follow_up": {
+      "interval_days": 365,
+      "reason": "next annual physical"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "diagnoses[0].description",
+        "value": "encounter for adult preventive examination",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.interval_days",
+        "value": "365",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": []
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "lipid panel, fasting glucose, A1c, comprehensive metabolic panel, CBC, TSH",
+            "gold": "lipid panel, fasting glucose, A1c, comprehensive metabolic panel, CBC, TSH"
+          },
+          {
+            "predicted": "schedule screening mammogram",
+            "gold": "schedule screening mammogram"
+          },
+          {
+            "predicted": "schedule first colonoscopy",
+            "gold": "schedule first colonoscopy"
+          },
+          {
+            "predicted": "Pap smear today",
+            "gold": "Pap smear today"
+          },
+          {
+            "predicted": "tetanus booster today",
+            "gold": "tetanus booster today"
+          },
+          {
+            "predicted": "continue regular exercise, alcohol under one drink a day",
+            "gold": "continue regular exercise, alcohol under one drink a day"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_042"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "annual physical",
+          "vitals": {
+            "bp": "122/78",
+            "hr": 70,
+            "temp_f": 98.4,
+            "spo2": 99
+          },
+          "medications": [],
+          "diagnoses": [
+            {
+              "description": "encounter for adult preventive examination",
+              "icd10": "Z00.00"
+            }
+          ],
+          "plan": [
+            "lipid panel, fasting glucose, A1c, comprehensive metabolic panel, CBC, TSH",
+            "schedule screening mammogram",
+            "schedule first colonoscopy",
+            "Pap smear today",
+            "tetanus booster today",
+            "continue regular exercise, alcohol under one drink a day"
+          ],
+          "follow_up": {
+            "interval_days": 365,
+            "reason": "next annual physical"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person, annual physical]\r\n[Vitals: BP 122/78, HR 70, Temp 98.4, SpO2 99%]\r\n\r\nDoctor: Hi Patricia. Annual physical today, anything specific to discuss?\r\nPatient: Just routine. I feel pretty good. I do worry about my cholesterol since my dad had a heart attack at 60.\r\nDoctor: Got it. You're 50, no current medications. Let's do age-appropriate screening: lipid panel, fasting glucose, A1c, comprehensive metabolic panel, CBC, TSH. Schedule your screening mammogram and your first colonoscopy. Pap smear if not done in the last 3 years.\r\nPatient: It's been 4 years.\r\nDoctor: We'll do that today. Exam unremarkable. Let's review preventive items: continue your regular exercise, your weight is stable, no smoking, moderate alcohol — keep that under one drink a day. Get your tetanus booster today, it's been over 10 years.\r\nPatient: Sure.\r\nDoctor: I'll call with labs. See you next year for your annual unless something comes up.\r\n",
+  "gold": {
+    "chief_complaint": "annual physical",
+    "vitals": {
+      "bp": "122/78",
+      "hr": 70,
+      "temp_f": 98.4,
+      "spo2": 99
+    },
+    "medications": [],
+    "diagnoses": [
+      {
+        "description": "encounter for adult preventive examination",
+        "icd10": "Z00.00"
+      }
+    ],
+    "plan": [
+      "lipid panel, fasting glucose, A1c, comprehensive metabolic panel, CBC, TSH",
+      "schedule screening mammogram",
+      "schedule first colonoscopy",
+      "Pap smear today",
+      "tetanus booster today",
+      "continue regular exercise, alcohol under one drink a day"
+    ],
+    "follow_up": {
+      "interval_days": 365,
+      "reason": "next annual physical"
+    }
+  },
+  "completedAt": "2026-05-01T10:06:47.428Z"
+}

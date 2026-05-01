@@ -1,0 +1,220 @@
+{
+  "transcriptId": "case_048",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "left index finger laceration from kitchen knife",
+    "vitals": {
+      "bp": "124/78",
+      "hr": 86,
+      "temp_f": 98.6,
+      "spo2": 99
+    },
+    "medications": [
+      {
+        "name": "bacitracin ointment",
+        "dose": "thin layer",
+        "frequency": "twice daily",
+        "route": "topical"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "laceration of left index finger",
+        "icd10": "S61.219A"
+      }
+    ],
+    "plan": [
+      "clean and irrigate wound, close with 4-0 nylon simple interrupted sutures",
+      "keep clean and dry for 24 hours then wash gently with soap and water",
+      "apply thin layer of bacitracin ointment twice daily and re-cover",
+      "no soaking until sutures come out",
+      "watch for redness, warmth, pus, streaking, fever and call if any"
+    ],
+    "follow_up": {
+      "interval_days": 10,
+      "reason": "suture removal"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "chief_complaint",
+        "value": "left index finger laceration from kitchen knife",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "medications[0].route",
+        "value": "topical",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[0]",
+        "value": "clean and irrigate wound, close with 4-0 nylon simple interrupted sutures",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "bacitracin ointment",
+              "dose": "thin layer",
+              "frequency": "twice daily",
+              "route": "topical"
+            },
+            "gold": {
+              "name": "bacitracin ointment",
+              "dose": "thin layer",
+              "frequency": "twice daily",
+              "route": "topical"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "clean and irrigate wound, close with 4-0 nylon simple interrupted sutures",
+            "gold": "clean and irrigate wound, close with 4-0 nylon simple interrupted sutures"
+          },
+          {
+            "predicted": "keep clean and dry for 24 hours then wash gently with soap and water",
+            "gold": "keep clean and dry for 24 hours then wash gently with soap and water"
+          },
+          {
+            "predicted": "apply thin layer of bacitracin ointment twice daily and re-cover",
+            "gold": "apply thin layer of bacitracin ointment twice daily and re-cover"
+          },
+          {
+            "predicted": "no soaking until sutures come out",
+            "gold": "no soaking until sutures come out"
+          },
+          {
+            "predicted": "watch for redness, warmth, pus, streaking, fever and call if any",
+            "gold": "watch for redness, warmth, pus, streaking, fever and call if any"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "few_shot",
+        "transcriptId": "case_048"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "left index finger laceration from kitchen knife",
+          "vitals": {
+            "bp": "124/78",
+            "hr": 86,
+            "temp_f": 98.6,
+            "spo2": 99
+          },
+          "medications": [
+            {
+              "name": "bacitracin ointment",
+              "dose": "thin layer",
+              "frequency": "twice daily",
+              "route": "topical"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "laceration of left index finger",
+              "icd10": "S61.219A"
+            }
+          ],
+          "plan": [
+            "clean and irrigate wound, close with 4-0 nylon simple interrupted sutures",
+            "keep clean and dry for 24 hours then wash gently with soap and water",
+            "apply thin layer of bacitracin ointment twice daily and re-cover",
+            "no soaking until sutures come out",
+            "watch for redness, warmth, pus, streaking, fever and call if any"
+          ],
+          "follow_up": {
+            "interval_days": 10,
+            "reason": "suture removal"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "0104e919dec297ce",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person urgent]\r\n[Vitals: BP 124/78, HR 86, Temp 98.6, SpO2 99%]\r\n\r\nDoctor: Hi Hannah, that's a nasty cut. What happened?\r\nPatient: I was slicing tomatoes and the knife slipped. About an hour ago.\r\nDoctor: Let me look. You've got a 3 cm laceration on the volar aspect of your left index finger, clean edges, no involvement of tendon, full sensation, full range of motion, no foreign body. Bleeding is controlled with pressure.\r\nPatient: Stitches?\r\nDoctor: Yes, simple interrupted sutures. I'll clean and irrigate it, then close with 4-0 nylon. Tetanus is up to date per your chart.\r\nPatient: Okay.\r\nDoctor: After: keep it clean and dry for 24 hours, then you can wash gently with soap and water. Apply a thin layer of bacitracin ointment twice daily and re-cover. No soaking — no dishes, baths, swimming — until sutures come out.\r\nPatient: When's that?\r\nDoctor: Come back in 10 days for suture removal. Watch for redness, warmth, pus, streaking, fever — call us right away if any of those.\r\n",
+  "gold": {
+    "chief_complaint": "left index finger laceration from kitchen knife",
+    "vitals": {
+      "bp": "124/78",
+      "hr": 86,
+      "temp_f": 98.6,
+      "spo2": 99
+    },
+    "medications": [
+      {
+        "name": "bacitracin ointment",
+        "dose": "thin layer",
+        "frequency": "twice daily",
+        "route": "topical"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "laceration of left index finger",
+        "icd10": "S61.219A"
+      }
+    ],
+    "plan": [
+      "clean and irrigate wound, close with 4-0 nylon simple interrupted sutures",
+      "keep clean and dry for 24 hours then wash gently with soap and water",
+      "apply thin layer of bacitracin ointment twice daily and re-cover",
+      "no soaking until sutures come out",
+      "watch for redness, warmth, pus, streaking, fever and call if any"
+    ],
+    "follow_up": {
+      "interval_days": 10,
+      "reason": "suture removal"
+    }
+  },
+  "completedAt": "2026-05-01T10:07:15.705Z"
+}

@@ -1,0 +1,252 @@
+{
+  "transcriptId": "case_007",
+  "status": "completed",
+  "prediction": {
+    "chief_complaint": "three days of body aches, fever, headache, and dry cough",
+    "vitals": {
+      "bp": "128/84",
+      "hr": 104,
+      "temp_f": 101.8,
+      "spo2": 94
+    },
+    "medications": [
+      {
+        "name": "oseltamivir",
+        "dose": "75 mg",
+        "frequency": "twice daily",
+        "route": "PO"
+      },
+      {
+        "name": "acetaminophen",
+        "dose": "650 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "influenza A",
+        "icd10": "J10.1"
+      }
+    ],
+    "plan": [
+      "oseltamivir 75 mg twice daily for 5 days",
+      "acetaminophen 650 mg every 6 hours as needed for fever and aches",
+      "push fluids and rest",
+      "go to ER if SpO2 drops below 92 or breathing worsens",
+      "message in 3 days for check-in"
+    ],
+    "follow_up": {
+      "interval_days": 3,
+      "reason": "message check-in for influenza"
+    }
+  },
+  "evaluation": {
+    "scores": {
+      "chief_complaint": 1,
+      "vitals": 1,
+      "medications": 1,
+      "diagnoses": 1,
+      "plan": 1,
+      "follow_up": 1,
+      "overall": 1
+    },
+    "schemaValid": true,
+    "schemaErrors": [],
+    "hallucinations": [
+      {
+        "field": "diagnoses[0].description",
+        "value": "influenza A",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "plan[3]",
+        "value": "go to ER if SpO2 drops below 92 or breathing worsens",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      },
+      {
+        "field": "follow_up.reason",
+        "value": "message check-in for influenza",
+        "reason": "Value was not found as an exact substring or close fuzzy match in the transcript."
+      }
+    ],
+    "details": {
+      "medication": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": {
+              "name": "oseltamivir",
+              "dose": "75 mg",
+              "frequency": "twice daily",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "oseltamivir",
+              "dose": "75 mg",
+              "frequency": "twice daily",
+              "route": "PO"
+            }
+          },
+          {
+            "predicted": {
+              "name": "acetaminophen",
+              "dose": "650 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            },
+            "gold": {
+              "name": "acetaminophen",
+              "dose": "650 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          }
+        ]
+      },
+      "plan": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "matches": [
+          {
+            "predicted": "oseltamivir 75 mg twice daily for 5 days",
+            "gold": "oseltamivir 75 mg twice daily for 5 days"
+          },
+          {
+            "predicted": "acetaminophen 650 mg every 6 hours as needed for fever and aches",
+            "gold": "acetaminophen 650 mg every 6 hours as needed for fever and aches"
+          },
+          {
+            "predicted": "push fluids and rest",
+            "gold": "push fluids and rest"
+          },
+          {
+            "predicted": "go to ER if SpO2 drops below 92 or breathing worsens",
+            "gold": "go to ER if SpO2 drops below 92 or breathing worsens"
+          },
+          {
+            "predicted": "message in 3 days for check-in",
+            "gold": "message in 3 days for check-in"
+          }
+        ]
+      }
+    }
+  },
+  "trace": [
+    {
+      "attempt": 1,
+      "request": {
+        "provider": "fixture",
+        "model": "claude-haiku-4-5-20251001",
+        "strategy": "zero_shot",
+        "transcriptId": "case_007"
+      },
+      "response": {
+        "provider": "fixture",
+        "note": "Local smoke-test provider. Production runs use Anthropic tool use.",
+        "prediction": {
+          "chief_complaint": "three days of body aches, fever, headache, and dry cough",
+          "vitals": {
+            "bp": "128/84",
+            "hr": 104,
+            "temp_f": 101.8,
+            "spo2": 94
+          },
+          "medications": [
+            {
+              "name": "oseltamivir",
+              "dose": "75 mg",
+              "frequency": "twice daily",
+              "route": "PO"
+            },
+            {
+              "name": "acetaminophen",
+              "dose": "650 mg",
+              "frequency": "every 6 hours as needed",
+              "route": "PO"
+            }
+          ],
+          "diagnoses": [
+            {
+              "description": "influenza A",
+              "icd10": "J10.1"
+            }
+          ],
+          "plan": [
+            "oseltamivir 75 mg twice daily for 5 days",
+            "acetaminophen 650 mg every 6 hours as needed for fever and aches",
+            "push fluids and rest",
+            "go to ER if SpO2 drops below 92 or breathing worsens",
+            "message in 3 days for check-in"
+          ],
+          "follow_up": {
+            "interval_days": 3,
+            "reason": "message check-in for influenza"
+          }
+        }
+      },
+      "schemaValid": true,
+      "validationErrors": [],
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0
+      }
+    }
+  ],
+  "promptHash": "7931e17c0ab5a0ef",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0
+  },
+  "costUsd": 0,
+  "wallTimeMs": 1,
+  "transcript": "[Visit type: in-person urgent]\r\n[Vitals: BP 128/84, HR 104, Temp 101.8, SpO2 94%]\r\n\r\nDoctor: Hi Aisha. Tell me what's going on.\r\nPatient: I've had body aches, fever, headache, and a dry cough for three days. My whole family has it.\r\nDoctor: Any shortness of breath at rest?\r\nPatient: A little when I walk around.\r\nDoctor: SpO2 is 94, which is borderline. Let's swab for flu and COVID. ... Flu A is positive, COVID negative.\r\nPatient: Of course.\r\nDoctor: Since you're within 48 hours of symptom onset, I'd like to start oseltamivir 75 mg twice daily for 5 days. For symptom relief, acetaminophen 650 mg every 6 hours as needed. Push fluids and rest.\r\nPatient: Should I worry about the oxygen?\r\nDoctor: Recheck at home if you have a pulse ox. If it drops below 92 or you get worse breathing, go to the ER. Otherwise check in by message in 3 days.\r\n",
+  "gold": {
+    "chief_complaint": "three days of body aches, fever, headache, and dry cough",
+    "vitals": {
+      "bp": "128/84",
+      "hr": 104,
+      "temp_f": 101.8,
+      "spo2": 94
+    },
+    "medications": [
+      {
+        "name": "oseltamivir",
+        "dose": "75 mg",
+        "frequency": "twice daily",
+        "route": "PO"
+      },
+      {
+        "name": "acetaminophen",
+        "dose": "650 mg",
+        "frequency": "every 6 hours as needed",
+        "route": "PO"
+      }
+    ],
+    "diagnoses": [
+      {
+        "description": "influenza A",
+        "icd10": "J10.1"
+      }
+    ],
+    "plan": [
+      "oseltamivir 75 mg twice daily for 5 days",
+      "acetaminophen 650 mg every 6 hours as needed for fever and aches",
+      "push fluids and rest",
+      "go to ER if SpO2 drops below 92 or breathing worsens",
+      "message in 3 days for check-in"
+    ],
+    "follow_up": {
+      "interval_days": 3,
+      "reason": "message check-in for influenza"
+    }
+  },
+  "completedAt": "2026-05-01T10:06:42.209Z"
+}
